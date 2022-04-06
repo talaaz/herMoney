@@ -7,8 +7,17 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const BottomTabNavigator = () => {
   const Tab = createBottomTabNavigator();
+
+  const screenOptionStyle = {
+    headerStyle: {
+      backgroundColor: '#323232',
+    },
+    headerTintColor: '#e5e5e5',
+    headerBackTitle: '',
+    tabBarStyle: [{backgroundColor: '#323232'}],
+  };
   return (
-    <Tab.Navigator screenOptions={{headerShown: false}}>
+    <Tab.Navigator screenOptions={screenOptionStyle}>
       <Tab.Screen
         name="Home"
         component={HomeScreen}
