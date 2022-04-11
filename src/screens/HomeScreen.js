@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button, Text, View, ScrollView} from 'react-native';
-import bankdata from '../data/csvjson.json';
+import bankdata from '../data/csvjson2.json';
 import {useState} from 'react';
 import {
   VictoryBar,
@@ -26,8 +26,6 @@ const HomeScreen = ({navigation}) => {
       Object.entries(dataset[index])[0][1].slice(3, 5),
       Object.entries(dataset[index])[0][1].slice(0, 2),
     ),
-    //weekNumber: getWeek(Object.entries(dataset[11])[0][1]),
-    //Object.entries(dataset[index])[0][1].slice(0,2)+"-"+Object.entries(dataset[index])[0][1].slice(3,5)+"-"+Object.entries(dataset[index])[0][1].slice(6,10)
   }));
   const negative_amount = data_reformat
     .filter(data => data.Amount <= 0)
@@ -47,62 +45,79 @@ const HomeScreen = ({navigation}) => {
       return accumulator + object.Amount;
     }, 0);
 
-  const domains = {
-    month: [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ],
-    day: [
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-      'Sunday',
-    ],
-  };
-  function groupBy(collection, property) {
-    var i = 0,
-      val,
-      index,
-      values = [],
-      result = [];
-    for (; i < collection.length; i++) {
-      val = collection[i][property];
-      index = values.indexOf(val);
-      if (index > -1) result[index].push(collection[i]);
-      else {
-        values.push(val);
-        result.push([collection[i]]);
+  function arrayFromObject(obj) {
+    var arr = [];
+    for (var i in obj) {
+      arr.push(obj[i]);
+    }
+    return arr;
+  }
+
+  function groupBy(list, fn) {
+    var groups = {};
+    for (var i = 0; i < list.length; i++) {
+      var group = JSON.stringify(fn(list[i]));
+      if (group in groups) {
+        groups[group].push(list[i]);
+      } else {
+        groups[group] = [list[i]];
       }
     }
-    return result;
+    return arrayFromObject(groups);
   }
-  const month_groups = groupBy(data_reformat, 'month');
-  function groupBySecond(collection) {
-    var i = 0,
-      j = 0,
-      result = [];
-    for (; i < collection.length; i++) {
-      result.push(groupBy(collection[i], 'Category'));
-    }
-    return result;
-  }
-  const grouped = groupBySecond(month_groups);
+  const result = groupBy(data_reformat, function (item) {
+    return [item.month]; // item.month]; //item.Category,
+  });
 
+  // console.log(result);
+
+  function getNum(val) {
+    if (isNaN(val)) {
+      return 0;
+    }
+    return val;
+  }
+
+  function transformData(dataset) {
+    const months = [
+      143482, -219753, -6, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,
+    ];
+
+    return dataset.map(data => {
+      return data.map((datum, i) => {
+        return {
+          x: datum.Category,
+          z: datum.month,
+          y: getNum(datum.Amount / months[i]) * 100,
+        };
+      });
+    });
+  }
+
+  const dataTala = transformData(result);
+  const final = dataTala.map((data, index) => ({
+    ...data,
+    total: data.reduce(function (sum, tax) {
+      return sum + tax.y;
+    }, 0),
+  }));
+
+  const month = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
   return (
-    <ScrollView style={{flex: 1}}>
+    <ScrollView>
       <Text>Home Screen</Text>
 
       <VictoryChart theme={VictoryTheme.material}>
@@ -132,6 +147,16 @@ const HomeScreen = ({navigation}) => {
         title="Go to Details123"
         onPress={() => navigation.navigate('Details')}
       />
+
+      <VictoryChart height={400} width={400} domainPadding={{x: 10, y: 20}}>
+        <VictoryStack colorScale={['black', 'blue', 'tomato', 'red']}>
+          {dataTala.map((data, i) => {
+            return <VictoryBar data={data} key={i} />;
+          })}
+        </VictoryStack>
+        <VictoryAxis dependentAxis tickFormat={tick => `${tick}%`} />
+        <VictoryAxis tickFormat={month} />
+      </VictoryChart>
 
       <Text>Text: {console.log()}</Text>
       <Text>amount first element: {data_reformat[0].Amount}</Text>

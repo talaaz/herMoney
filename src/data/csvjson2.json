@@ -1,0 +1,1422 @@
+[
+  {
+    "Date": "03.01.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Blue Energy A/S",
+    "Amount": "-1,423.87",
+    "Balance": "21,201.54",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "03.01.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Telephone",
+    "Text": "Call Me A/S",
+    "Amount": -118.75,
+    "Balance": "21,082.79",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "03.01.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Telephone",
+    "Text": "Call Me A/S",
+    "Amount": -88.75,
+    "Balance": "20,994.04",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "03.01.2022",
+    "Category": "Other debt",
+    "Subcategory": "Consumer loan",
+    "Text": "Santander Consumer Bank",
+    "Amount": "-2,954.00",
+    "Balance": "18,040.04",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "03.01.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Telia Finance Denmark",
+    "Amount": -82.4,
+    "Balance": "17,957.64",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "03.01.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "iZ *Orienten Shawa   ))))",
+    "Amount": -350,
+    "Balance": "17,607.64",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "05.01.2022",
+    "Category": "Transport",
+    "Subcategory": "Fuel",
+    "Text": "INGO KBH. N TAGENSVE",
+    "Amount": -415.85,
+    "Balance": "17,191.79",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "05.01.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Cable TV/satellite",
+    "Text": "NETFLIX.COM",
+    "Amount": -79,
+    "Balance": "17,112.79",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "06.01.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "Bagel Factory Fields ))))",
+    "Amount": -135,
+    "Balance": "16,977.79",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "06.01.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "Bagel Factory Fields ))))",
+    "Amount": -35,
+    "Balance": "16,942.79",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "06.01.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "Cafe F1              ))))",
+    "Amount": -150,
+    "Balance": "16,792.79",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "07.01.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Cable TV/satellite",
+    "Text": "MobilePay EASY PARK A/S",
+    "Amount": -14,
+    "Balance": "16,778.79",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "07.01.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "Cafe F1              ))))",
+    "Amount": -236,
+    "Balance": "16,542.79",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "07.01.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Holiday",
+    "Text": "Flights on Booking.c",
+    "Amount": -687.99,
+    "Balance": "15,854.80",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "08.01.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "MobilePay Hadi Horani",
+    "Amount": 127,
+    "Balance": "15,981.80",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "08.01.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Transfers",
+    "Text": "MobilePay Hadi Horani",
+    "Amount": -127,
+    "Balance": "15,854.80",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "10.01.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Lyngby Loeve Apotek  ))))",
+    "Amount": -382.45,
+    "Balance": "15,472.35",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "11.01.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Other",
+    "Text": "SARASGRILL  *TAKE AW",
+    "Amount": -253.75,
+    "Balance": "15,218.60",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "14.01.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Netto Lyngbygaardsve ))))",
+    "Amount": -31.95,
+    "Balance": "15,186.65",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "14.01.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Netto Lyngbygaardsve ))))",
+    "Amount": -138,
+    "Balance": "15,048.65",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "17.01.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Netto Lyngbygaardsve ))))",
+    "Amount": -1,
+    "Balance": "15,047.65",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "17.01.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Netto Lyngbygaardsve ))))",
+    "Amount": -30.95,
+    "Balance": "15,016.70",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "17.01.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Netto Lyngbygaardsve ))))",
+    "Amount": -31,
+    "Balance": "14,985.70",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "17.01.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "7-ELEVEN BUTIK",
+    "Amount": -60,
+    "Balance": "14,925.70",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "18.01.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Netto Lyngbygaardsve ))))",
+    "Amount": -15.95,
+    "Balance": "14,909.75",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "19.01.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Nordvest Bazar       ))))",
+    "Amount": -29,
+    "Balance": "14,880.75",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "20.01.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "iZ *Orienten Shawa   ))))",
+    "Amount": -400,
+    "Balance": "14,480.75",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "24.01.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "IO ApS               ))))",
+    "Amount": -100,
+    "Balance": "14,380.75",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "24.01.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Cable TV/satellite",
+    "Text": "MobilePay EASY PARK A/S",
+    "Amount": -9.25,
+    "Balance": "14,371.50",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "24.01.2022",
+    "Category": "Transport",
+    "Subcategory": "Fuel",
+    "Text": "INGO KBH. N TAGENSVE",
+    "Amount": -434.33,
+    "Balance": "13,937.17",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "24.01.2022",
+    "Category": "Clothing, shoes and personal care",
+    "Subcategory": "Clothing/shoes",
+    "Text": "Zalando Payments",
+    "Amount": "-6,344.99",
+    "Balance": "7,592.18",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "25.01.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Transfer of salary",
+    "Amount": "3,373.45",
+    "Balance": "10,965.63",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "26.01.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "DTU Bibliotek",
+    "Amount": -10,
+    "Balance": "10,955.63",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "27.01.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "Kalaset ApS",
+    "Amount": -30,
+    "Balance": "10,925.63",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "31.01.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "SU",
+    "Amount": "5,627.00",
+    "Balance": "16,552.63",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "01.02.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Telephone",
+    "Text": "Call Me A/S",
+    "Amount": -88.75,
+    "Balance": "16,463.88",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "01.02.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Telephone",
+    "Text": "Call Me A/S",
+    "Amount": -120.15,
+    "Balance": "16,343.73",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "01.02.2022",
+    "Category": "Other debt",
+    "Subcategory": "Consumer loan",
+    "Text": "Santander Consumer Bank",
+    "Amount": "-2,954.00",
+    "Balance": "13,389.73",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "01.02.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Blue Energy A/S",
+    "Amount": "-1,440.74",
+    "Balance": "11,948.99",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "03.02.2022",
+    "Category": "Household goods",
+    "Subcategory": "Fast food/take-away",
+    "Text": "Burger King Kob",
+    "Amount": -40,
+    "Balance": "11,908.99",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "03.02.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Cash withdrawals",
+    "Text": "ATM payment Lyngby Afdeling",
+    "Amount": -500,
+    "Balance": "11,408.99",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "04.02.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Just Eat.dk",
+    "Amount": 14,
+    "Balance": "11,422.99",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "04.02.2022",
+    "Category": "Household goods",
+    "Subcategory": "Fast food/take-away",
+    "Text": "Just Eat.dk",
+    "Amount": -14,
+    "Balance": "11,408.99",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "04.02.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Lidl                 ))))",
+    "Amount": -74.95,
+    "Balance": "11,334.04",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "04.02.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "Wolt",
+    "Amount": -14,
+    "Balance": "11,320.04",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "07.02.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Cable TV/satellite",
+    "Text": "NETFLIX.COM",
+    "Amount": -79,
+    "Balance": "11,241.04",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "07.02.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Bilka Ishoej         ))))",
+    "Amount": -631.98,
+    "Balance": "10,609.06",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "07.02.2022",
+    "Category": "Transport",
+    "Subcategory": "Fuel",
+    "Text": "Circle K Lyngbygards",
+    "Amount": -354.84,
+    "Balance": "10,254.22",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "07.02.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "SWEETDEAL.DK",
+    "Amount": -106,
+    "Balance": "10,148.22",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "09.02.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Zalando Payments",
+    "Amount": "2,499.00",
+    "Balance": "12,647.22",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "09.02.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Zalando Payments",
+    "Amount": "1,970.00",
+    "Balance": "14,617.22",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "09.02.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "Noerreport Shawarma",
+    "Amount": -29,
+    "Balance": "14,588.22",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "10.02.2022",
+    "Category": "Clothing, shoes and personal care",
+    "Subcategory": "Clothing/shoes",
+    "Text": "Kaufmann             ))))",
+    "Amount": -254,
+    "Balance": "14,334.22",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "11.02.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Zalando Payments",
+    "Amount": 390.99,
+    "Balance": "14,725.21",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "11.02.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "Cafe Skylab",
+    "Amount": -18,
+    "Balance": "14,707.21",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "11.02.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Netto Lyngbygaardsve ))))",
+    "Amount": -134.8,
+    "Balance": "14,572.41",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "14.02.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Leisure activities",
+    "Text": "Ballerupbowling",
+    "Amount": -60,
+    "Balance": "14,512.41",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "14.02.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Holiday",
+    "Text": "Flights on Booking.c",
+    "Amount": "-2,388.99",
+    "Balance": "12,123.42",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "15.02.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Flights on Booking.c",
+    "Amount": "1,963.99",
+    "Balance": "14,087.41",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "15.02.2022",
+    "Category": "Household goods",
+    "Subcategory": "Fast food/take-away",
+    "Text": "Just Eat.dk",
+    "Amount": -125,
+    "Balance": "13,962.41",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "15.02.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "Oz Juvel ApS         ))))",
+    "Amount": -576,
+    "Balance": "13,386.41",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "15.02.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "Wolt",
+    "Amount": -52,
+    "Balance": "13,334.41",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "16.02.2022",
+    "Category": "Transport",
+    "Subcategory": "Fuel",
+    "Text": "Circle K Lyngbygards",
+    "Amount": -414.77,
+    "Balance": "12,919.64",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "18.02.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "DTU Bibliotek",
+    "Amount": -10,
+    "Balance": "12,909.64",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "18.02.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Lyngby Loeve Apotek  ))))",
+    "Amount": -225,
+    "Balance": "12,684.64",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "21.02.2022",
+    "Category": "Clothing, shoes and personal care",
+    "Subcategory": "Clothing/shoes",
+    "Text": "Esprit Fields        ))))",
+    "Amount": "-1,263.98",
+    "Balance": "11,420.66",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "21.02.2022",
+    "Category": "Household goods",
+    "Subcategory": "Fast food/take-away",
+    "Text": "Royal Bagel Corner v",
+    "Amount": -59,
+    "Balance": "11,361.66",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "22.02.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Transfer of salary",
+    "Amount": "4,068.45",
+    "Balance": "15,430.11",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "22.02.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "Oz Juvel ApS         ))))",
+    "Amount": -853,
+    "Balance": "14,577.11",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "23.02.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Telephone",
+    "Text": "www.lycamobile.dk",
+    "Amount": -19,
+    "Balance": "14,558.11",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "23.02.2022",
+    "Category": "Clothing, shoes and personal care",
+    "Subcategory": "Clothing/shoes",
+    "Text": "ADIDASDK WW.ADIDAS.D",
+    "Amount": "-1,237.65",
+    "Balance": "13,320.46",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "24.02.2022",
+    "Category": "Clothing, shoes and personal care",
+    "Subcategory": "Clothing/shoes",
+    "Text": "ADIDASDK WW.ADIDAS.D",
+    "Amount": -349.3,
+    "Balance": "12,971.16",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "24.02.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "Wolt",
+    "Amount": -146,
+    "Balance": "12,825.16",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "28.02.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "SU",
+    "Amount": "5,627.00",
+    "Balance": "18,452.16",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "28.02.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Foetex Lyngby        ))))",
+    "Amount": -173,
+    "Balance": "18,279.16",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "28.02.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Lyngby Loeve Apotek  ))))",
+    "Amount": -59.95,
+    "Balance": "18,219.21",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "28.02.2022",
+    "Category": "Household goods",
+    "Subcategory": "Other",
+    "Text": "Mariam M. Marked v/G ))))",
+    "Amount": -31,
+    "Balance": "18,188.21",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "28.02.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "NETTO JERNBANEPL.    ))))",
+    "Amount": -81.65,
+    "Balance": "18,106.56",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "28.02.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Transfers",
+    "Text": "MobilePay Azrak",
+    "Amount": "-1,000.00",
+    "Balance": "17,106.56",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "01.03.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Telephone",
+    "Text": "Call Me A/S",
+    "Amount": -118.75,
+    "Balance": "16,987.81",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "01.03.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Telephone",
+    "Text": "Call Me A/S",
+    "Amount": -88.75,
+    "Balance": "16,899.06",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "01.03.2022",
+    "Category": "Other debt",
+    "Subcategory": "Consumer loan",
+    "Text": "Santander Consumer Bank",
+    "Amount": "-2,954.00",
+    "Balance": "13,945.06",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "01.03.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Blue Energy A/S",
+    "Amount": "-1,231.50",
+    "Balance": "12,713.56",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "01.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Lidl                 ))))",
+    "Amount": -19.95,
+    "Balance": "12,693.61",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "02.03.2022",
+    "Category": "Clothing, shoes and personal care",
+    "Subcategory": "Clothing/shoes",
+    "Text": "Zalando Payments",
+    "Amount": "-2,620.95",
+    "Balance": "10,072.66",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "03.03.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Zalando Payments",
+    "Amount": 299.95,
+    "Balance": "10,372.61",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "03.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "7-Eleven B 087       ))))",
+    "Amount": -71,
+    "Balance": "10,301.61",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "04.03.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Zalando Payments",
+    "Amount": 695,
+    "Balance": "10,996.61",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "04.03.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Zalando Payments",
+    "Amount": 898,
+    "Balance": "11,894.61",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "07.03.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Zalando Payments",
+    "Amount": 728,
+    "Balance": "12,622.61",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "07.03.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Cable TV/satellite",
+    "Text": "NETFLIX.COM",
+    "Amount": -79,
+    "Balance": "12,543.61",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "07.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "7-ELEVEN BUTIK",
+    "Amount": -40,
+    "Balance": "12,503.61",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "07.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Fast food/take-away",
+    "Text": "Just Eat.dk",
+    "Amount": -165,
+    "Balance": "12,338.61",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "07.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Fast food/take-away",
+    "Text": "Just Eat.dk",
+    "Amount": -122,
+    "Balance": "12,216.61",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "07.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "7-ELEVEN BUTIK",
+    "Amount": -25,
+    "Balance": "12,191.61",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "07.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "7-ELEVEN BUTIK",
+    "Amount": -30,
+    "Balance": "12,161.61",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "07.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "7-ELEVEN BUTIK",
+    "Amount": -40,
+    "Balance": "12,121.61",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "08.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Fdb SuperB Fontunbye ))))",
+    "Amount": -34,
+    "Balance": "12,087.61",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "08.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Netto Lyngbygaardsve ))))",
+    "Amount": -74.1,
+    "Balance": "12,013.51",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "09.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Netto Lyngbygaardsve",
+    "Amount": -10.95,
+    "Balance": "12,002.56",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "09.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Bakery",
+    "Text": "MobilePay SHAMYAT",
+    "Amount": -40,
+    "Balance": "11,962.56",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "11.03.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Holiday",
+    "Text": "Flights on Booking.c",
+    "Amount": -658.99,
+    "Balance": "11,303.57",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "11.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "FDB Superbr Fortunby",
+    "Amount": -60,
+    "Balance": "11,243.57",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "11.03.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "Spice Boat Aps",
+    "Amount": -70,
+    "Balance": "11,173.57",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "11.03.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Transfers",
+    "Text": "MobilePay Hadi Horani",
+    "Amount": "-2,000.00",
+    "Balance": "9,173.57",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "15.03.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "ADIDASDK WW.ADIDAS.D",
+    "Amount": "1,237.65",
+    "Balance": "10,411.22",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "15.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Bilka One Stop",
+    "Amount": -64.95,
+    "Balance": "10,346.27",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "15.03.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Games/toys",
+    "Text": "Flying Tiger Copenha",
+    "Amount": -30,
+    "Balance": "10,316.27",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "15.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Foetex Lyngby",
+    "Amount": -69.95,
+    "Balance": "10,246.32",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "15.03.2022",
+    "Category": "Clothing, shoes and personal care",
+    "Subcategory": "Personal care",
+    "Text": "MATAS - 15288",
+    "Amount": -128.91,
+    "Balance": "10,117.41",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "16.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Bakery",
+    "Text": "101 Lagkagehuset",
+    "Amount": -32.95,
+    "Balance": "10,084.46",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "18.03.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Holiday",
+    "Text": "Flights on Booking.c",
+    "Amount": -720.99,
+    "Balance": "9,363.47",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "18.03.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Leisure activities",
+    "Text": "PF Cafeen",
+    "Amount": -14,
+    "Balance": "9,349.47",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "18.03.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Rossmann 2776        ))))",
+    "Amount": -534.88,
+    "Balance": "8,814.59",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "18.03.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "MobilePay Burger King - N�r...",
+    "Amount": -119,
+    "Balance": "8,695.59",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "18.03.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "MobilePay Anne-Sophie Bak",
+    "Amount": 60,
+    "Balance": "8,755.59",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "18.03.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Overf�rsel",
+    "Amount": "2,360.00",
+    "Balance": "11,115.59",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "21.03.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Cable TV/satellite",
+    "Text": "MobilePay EASY PARK A/S",
+    "Amount": -13.6,
+    "Balance": "11,101.99",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "21.03.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "Caracalla Cafe & Res",
+    "Amount": -328,
+    "Balance": "10,773.99",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "22.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Fast food/take-away",
+    "Text": "Burger King Kob",
+    "Amount": -124,
+    "Balance": "10,649.99",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "22.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Fast food/take-away",
+    "Text": "Burger King Kob",
+    "Amount": -124,
+    "Balance": "10,525.99",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "22.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Fast food/take-away",
+    "Text": "ISTANBUL CHICKEN ApS ))))",
+    "Amount": -63,
+    "Balance": "10,462.99",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "22.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Nordvest Bazar       ))))",
+    "Amount": -57,
+    "Balance": "10,405.99",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "22.03.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "Oz Juvel ApS         ))))",
+    "Amount": -505,
+    "Balance": "9,900.99",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "22.03.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "WU 2207989348899918",
+    "Amount": -154.55,
+    "Balance": "9,746.44",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "24.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Lidl                 ))))",
+    "Amount": -68.9,
+    "Balance": "9,677.54",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "24.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Netto Lyngby Hovedga ))))",
+    "Amount": -46.95,
+    "Balance": "9,630.59",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "25.03.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Transfer of salary",
+    "Amount": "3,460.45",
+    "Balance": "13,091.04",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "25.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Lidl                 ))))",
+    "Amount": -12,
+    "Balance": "13,079.04",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "27.03.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "MobilePay: Wolt",
+    "Amount": -135,
+    "Balance": "12,944.04",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "28.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Foetex Lyngby        ))))",
+    "Amount": -89.75,
+    "Balance": "12,854.29",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "28.03.2022",
+    "Category": "Transport",
+    "Subcategory": "Fuel",
+    "Text": "F24 - 8010",
+    "Amount": -372.76,
+    "Balance": "12,481.53",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "28.03.2022",
+    "Category": "Transport",
+    "Subcategory": "Other",
+    "Text": "Scandlines Web",
+    "Amount": -799,
+    "Balance": "11,682.53",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "28.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Other",
+    "Text": "Jarsbo Is",
+    "Amount": -78,
+    "Balance": "11,604.53",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "28.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Fast food/take-away",
+    "Text": "The Taste ApS",
+    "Amount": -38,
+    "Balance": "11,566.53",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "28.03.2022",
+    "Category": "Recreation and leisure",
+    "Subcategory": "Caf�/restaurant",
+    "Text": "The Coffee Coll",
+    "Amount": -76,
+    "Balance": "11,490.53",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "29.03.2022",
+    "Category": "Household goods",
+    "Subcategory": "Supermarket",
+    "Text": "Action 3633          ))))",
+    "Amount": -448.86,
+    "Balance": "11,041.67",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "29.03.2022",
+    "Category": "Transport",
+    "Subcategory": "Fuel",
+    "Text": "Agip Service-Station ))))",
+    "Amount": -43.65,
+    "Balance": "10,998.02",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "30.03.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "Fotoatelier Katrin W ))))",
+    "Amount": -98.18,
+    "Balance": "10,899.84",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "31.03.2022",
+    "Category": "Uncategorised",
+    "Subcategory": "Uncategorised",
+    "Text": "SU",
+    "Amount": "5,627.00",
+    "Balance": "16,526.84",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "31.03.2022",
+    "Category": "Clothing, shoes and personal care",
+    "Subcategory": "Clothing/shoes",
+    "Text": "C&A Haus 0303        ))))",
+    "Amount": -135.87,
+    "Balance": "16,390.97",
+    "Status": "Executed",
+    "Reconciled": "No"
+  },
+  {
+    "Date": "31.03.2022",
+    "Category": "Other expenses",
+    "Subcategory": "Transfers",
+    "Text": "MobilePay Azrak",
+    "Amount": -400,
+    "Balance": "15,990.97",
+    "Status": "Executed",
+    "Reconciled": "No"
+  }
+]
