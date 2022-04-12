@@ -7,10 +7,12 @@ import {
   VictoryChart,
   VictoryTheme,
   VictoryLine,
+  VictoryTooltip,
   VictoryZoomContainer,
   VictoryAxis,
   VictoryStack,
 } from 'victory-native';
+import transformedData from '../functions/transaction';
 
 const HomeScreen = ({navigation}) => {
   const dataset = bankdata;
@@ -100,7 +102,14 @@ const HomeScreen = ({navigation}) => {
     return result;
   }
   const grouped = groupBySecond(month_groups);
+  const data = transformedData('VIZ_01').data;
+  const dataset2 = transformedData('VIZ_02');
+  const asa = data.map(t => ({
+    x: t.DayOfYear,
+    y: t.BankBalance,
+  }));
 
+  console.log(dataset2);
   return (
     <ScrollView style={{flex: 1}}>
       <Text>Home Screen</Text>
@@ -111,20 +120,18 @@ const HomeScreen = ({navigation}) => {
           style={{
             data: {stroke: 'green'},
             parent: {border: '1px solid #ccc'},
+            labels: {fill: 'black'},
           }}
-          data={positive_amount}
-          y="Amount"
-          x="date"
-        />
-        <VictoryLine
-          interpolation="natural"
-          style={{
-            data: {stroke: '#c43a31'},
-            parent: {border: '1px solid #ccc'},
-          }}
-          data={negative_amount}
-          y="Amount"
-          x="date"
+          data={asa}
+          x="DayOfYear"
+          labels={({datum}) => datum.x}
+          labelComponent={
+            <VictoryTooltip
+              cornerRadius={0}
+              flyoutStyle={{fill: 'red'}}
+              renderInPortal={false}
+            />
+          }
         />
       </VictoryChart>
 
@@ -132,6 +139,27 @@ const HomeScreen = ({navigation}) => {
         title="Go to Details123"
         onPress={() => navigation.navigate('Details')}
       />
+
+      <VictoryChart height={400} width={400} domainPadding={{x: 30, y: 20}}>
+        <VictoryStack
+          colorScale={[
+            '#2a0cd0',
+            '#5ac50f',
+            '#c5534e',
+            '#443885',
+            '#aeb8b1',
+            '#996429',
+            '#f3f',
+            '#4ae2fd',
+            '#792f3f',
+          ]}>
+          {dataset2.map((d, i) => {
+            return <VictoryBar data={d} key={i} />;
+          })}
+        </VictoryStack>
+        <VictoryAxis dependentAxis tickFormat={tick => `${tick}%`} />
+        <VictoryAxis tickFormat={dataset2.x} />
+      </VictoryChart>
 
       <Text>Text: {console.log()}</Text>
       <Text>amount first element: {data_reformat[0].Amount}</Text>
