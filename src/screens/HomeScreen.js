@@ -36,7 +36,16 @@ const HomeScreen = ({navigation}) => {
     x: t.DayOfYear,
     y: t.BankBalance,
   }));
-
+  const colorScale = [
+    '#003f5c',
+    '#2f4b7c',
+    '#665191',
+    '#a05195',
+    '#d45087',
+    '#f95d6a',
+    '#ff7c43',
+    '#ffa600',
+  ];
   console.log(datasetCat);
   return (
     <ScrollView style={styles.container}>
@@ -45,17 +54,7 @@ const HomeScreen = ({navigation}) => {
 
       <Text style={styles.text}>Spending</Text>
       <VictoryChart height={300} width={450} domainPadding={{x: 30, y: 20}}>
-        <VictoryStack
-          colorScale={[
-            '#003f5c',
-            '#2f4b7c',
-            '#665191',
-            '#a05195',
-            '#d45087',
-            '#f95d6a',
-            '#ff7c43',
-            '#ffa600',
-          ]}>
+        <VictoryStack colorScale={colorScale}>
           {dataset.map((data, i) => {
             return <VictoryBar data={data} key={i} />;
           })}
@@ -67,7 +66,11 @@ const HomeScreen = ({navigation}) => {
         {distinct_list.map((item, i) => {
           return (
             <View style={styles.card_template}>
-              <View style={styles.text_container}>
+              <View
+                style={[
+                  styles.text_container,
+                  {backgroundColor: colorScale[i]},
+                ]}>
                 <Text style={styles.card_title}>{item}</Text>
               </View>
             </View>
@@ -95,6 +98,7 @@ const styles = StyleSheet.create({
     height: 250,
     boxShadow: '10px 10px 17px -12px rgba(0,0,0,0.75)',
     margin: 10,
+    borderRadius: 10,
   },
   card_image: {
     width: 250,
