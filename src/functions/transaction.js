@@ -75,7 +75,6 @@ const tranformedData = dataType => {
         }
         var transactionDate = transaction.Date;
         transactionDate = transactionDate.replace(/./g, ':').split(':');
-        console.log(transactionDate);
 
         transactionDate = new Date(
           transactionDate[2],
@@ -83,6 +82,7 @@ const tranformedData = dataType => {
           transactionDate[0],
         );
         transaction.Month = transactionDate.getMonth();
+
         for (let i = 0; i < groupedData.length; i++) {
           if (transaction.Category === uniques[i]) {
             for (let j = 0; j < months.length; j++) {
@@ -112,8 +112,48 @@ const tranformedData = dataType => {
       });
     }
     case 'VIZ_03': {
-      return;
+      const transformed = transactionData.map(transaction => {
+        var amount = transaction.Amount;
+        var date = transaction.Date;
+        var Date2 = new Date(
+          transaction.Date.slice(6, 10),
+          transaction.Date.slice(3, 5),
+          transaction.Date.slice(0, 2),
+        );
+        var cat = transaction.Category;
+        if (typeof amount === 'string') {
+          amount = parseInt(amount.replace(',', ''));
+          if (isNaN(amount)) {
+            amount = 0;
+          }
+        }
+
+        var transactionDate = transaction.Date;
+        transactionDate = transactionDate.replace(/./g, ':').split(':');
+        transactionDate = new Date(
+          transactionDate[2],
+          transactionDate[1],
+          transactionDate[0],
+        );
+        balance += amount;
+        //Calculate day of year from 1-366
+        var now = transactionDate;
+        var start = new Date(transactionDate.getFullYear(), 0, 0);
+        var diff = now - start;
+        var oneDay = 1000 * 60 * 60 * 24;
+        var day = Math.floor(diff / oneDay);
+        if (day < 274) {
+          day += 366;
+        }
+        return {
+          x: Date2,
+          cat: cat,
+          y: amount,
+        };
+      });
+      return {data: transformed};
     }
+
     default: {
       return;
     }

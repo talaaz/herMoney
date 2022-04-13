@@ -9,16 +9,21 @@ import {
   VictoryAxis,
   VictoryBar,
   VictoryStack,
+  VictoryLabel,
+  VictoryScatter,
 } from 'victory-native';
 import transformedData from '../functions/transaction';
 
 const HomeScreen = ({navigation}) => {
   const data = transformedData('VIZ_01').data;
   const dataset = transformedData('VIZ_02');
+  const datasetCat = transformedData('VIZ_03').data;
+
   const asa = data.map(t => ({
     x: t.DayOfYear,
     y: t.BankBalance,
   }));
+
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.text}>Total Balance</Text>
@@ -54,21 +59,26 @@ const HomeScreen = ({navigation}) => {
             data={asa}
             x="DayOfYear"
           />
+          <VictoryScatter
+            data={asa}
+            x="DayOfYear"
+            size={0.4}
+            style={{data: {fill: 'red'}}}
+          />
         </VictoryChart>
       </View>
       <Text style={styles.text}>SPENDING</Text>
-      <VictoryChart height={400} width={450} domainPadding={{x: 30, y: 20}}>
+      <VictoryChart height={300} width={450} domainPadding={{x: 30, y: 20}}>
         <VictoryStack
           colorScale={[
-            '#2a0cd0',
-            '#5ac50f',
-            '#c5534e',
-            '#443885',
-            '#aeb8b1',
-            '#996429',
-            '#f3f',
-            '#4ae2fd',
-            '#792f3f',
+            '#003f5c',
+            '#2f4b7c',
+            '#665191',
+            '#a05195',
+            '#d45087',
+            '#f95d6a',
+            '#ff7c43',
+            '#ffa600',
           ]}>
           {dataset.map((data, i) => {
             return <VictoryBar data={data} key={i} />;
@@ -76,6 +86,15 @@ const HomeScreen = ({navigation}) => {
         </VictoryStack>
         <VictoryAxis dependentAxis tickFormat={tick => `${tick}%`} />
         <VictoryAxis tickFormat={dataset.x} />
+      </VictoryChart>
+      <Text style={styles.text}>Categories</Text>
+      <VictoryChart height={300} width={450} domainPadding={{x: 30, y: 20}}>
+        {datasetCat
+          .filter(data => data.cat === 'Uncategorised')
+          .map((data, i) => {
+            let newArr = new Array(10).fill(0).map(v => ({...data}));
+            return <VictoryBar data={newArr} x="x" y="y" />;
+          })}
       </VictoryChart>
     </ScrollView>
   );
