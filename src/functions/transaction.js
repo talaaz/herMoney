@@ -135,6 +135,20 @@ const tranformedData = dataType => {
           transactionDate[1],
           transactionDate[0],
         );
+        var months = [
+          'jan',
+          'feb',
+          'mar',
+          'apr',
+          'may',
+          'jun',
+          'jul',
+          'aug',
+          'sep',
+          'oct',
+          'nov',
+          'dec',
+        ];
         balance += amount;
         //Calculate day of year from 1-366
         var now = transactionDate;
@@ -145,10 +159,12 @@ const tranformedData = dataType => {
         if (day < 274) {
           day += 366;
         }
+
         return {
           x: Date2,
           cat: cat,
           y: amount,
+          m: months[transactionData.month],
         };
       });
       return {data: transformed};

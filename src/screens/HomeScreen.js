@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Button, Text, View, StyleSheet, ScrollView} from 'react-native';
 import {
   VictoryChart,
@@ -13,6 +13,7 @@ import {
   VictoryScatter,
 } from 'victory-native';
 import transformedData from '../functions/transaction';
+import {Picker} from '@react-native-picker/picker';
 
 const HomeScreen = ({navigation}) => {
   const data = transformedData('VIZ_01').data;
@@ -23,7 +24,10 @@ const HomeScreen = ({navigation}) => {
     x: t.DayOfYear,
     y: t.BankBalance,
   }));
+  const [selectedValue, setSelectedValue] = useState('java');
+  var distinct_list = [...new Set(datasetCat.map(({cat}) => cat))];
 
+  console.log(distinct_list);
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.text}>Total Balance</Text>
@@ -88,12 +92,48 @@ const HomeScreen = ({navigation}) => {
         <VictoryAxis tickFormat={dataset.x} />
       </VictoryChart>
       <Text style={styles.text}>Categories</Text>
-      <VictoryChart height={300} width={450} domainPadding={{x: 30, y: 20}}>
+      <Picker
+        selectedValue={selectedValue}
+        style={{height: 50, width: 150}}
+        onValueChange={itemValue => setSelectedValue(itemValue)}>
+        {distinct_list.map((item, index) => {
+          return <Picker.Item label={item} value={item} key={index} />;
+        })}
+      </Picker>
+      <VictoryChart
+        height={300}
+        width={450}
+        colorScale={['tomato', 'orange', 'gold']}
+        containerComponent={
+          <VictoryVoronoiContainer
+            labels={({datum}) => parseInt(datum.y)}
+            labelComponent={
+              <VictoryTooltip
+                style={{fontSize: '15px', fill: 'black'}}
+                cornerRadius={15}
+                pointerLength={10}
+                active={true}
+                flyoutStyle={{
+                  fill: 'red',
+                }}
+                text={({datum}) => parseInt(datum.y)}
+              />
+            }
+          />
+        }>
         {datasetCat
-          .filter(data => data.cat === 'Uncategorised')
+          .filter(data => data.cat === selectedValue.toString())
           .map((data, i) => {
             let newArr = new Array(10).fill(0).map(v => ({...data}));
-            return <VictoryBar data={newArr} x="x" y="y" />;
+            return (
+              <VictoryBar
+                alignment="start"
+                data={newArr}
+                x="x"
+                y="y"
+                labels={({datum}) => `${datum.y}`}
+              />
+            );
           })}
       </VictoryChart>
     </ScrollView>
