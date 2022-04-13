@@ -1,5 +1,13 @@
 import React, {useState} from 'react';
-import {Button, Text, View, StyleSheet, ScrollView} from 'react-native';
+import {
+  Button,
+  FlatList,
+  Text,
+  View,
+  StyleSheet,
+  ScrollView,
+  Image,
+} from 'react-native';
 import {
   VictoryChart,
   VictoryTheme,
@@ -16,88 +24,26 @@ import {
 } from 'victory-native';
 import transformedData from '../functions/transaction';
 import {Picker} from '@react-native-picker/picker';
+import {LineChart} from '../component/LineChart';
+import {CategoryChart} from '../component/CategoryChart';
 
 const HomeScreen = ({navigation}) => {
   const data = transformedData('VIZ_01').data;
   const dataset = transformedData('VIZ_02');
   const datasetCat = transformedData('VIZ_03').data;
-
+  var distinct_list = [...new Set(datasetCat.map(({cat}) => cat))];
   const asa = data.map(t => ({
     x: t.DayOfYear,
     y: t.BankBalance,
   }));
-  const [selectedValue, setSelectedValue] = useState('java');
-  let arr = [];
-  var distinct_list = [...new Set(datasetCat.map(({cat}) => cat))];
-  const [selectedDomain, setSelectedDomain] = useState();
-  const [zoomDomain, setZoomDomain] = useState();
 
-  const handleZoom = domain => {
-    setSelectedDomain(domain);
-  };
-
-  const handleBrush = domain => {
-    setZoomDomain(domain);
-  };
-  const month = [
-    'jan',
-    'feb',
-    'mar',
-    'apr',
-    'may',
-    'jun',
-    'jul',
-    'aug',
-    'sep',
-    'oct',
-    'nov',
-    'dec',
-  ];
-
+  console.log(datasetCat);
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.text}>Total Balance</Text>
-      <View style={styles.lineChart}>
-        <VictoryChart
-          width={400}
-          height={200}
-          theme={VictoryTheme.material}
-          containerComponent={
-            <VictoryVoronoiContainer
-              labels={({datum}) => parseInt(datum.y)}
-              labelComponent={
-                <VictoryTooltip
-                  style={{fontSize: '15px', fill: 'black'}}
-                  cornerRadius={15}
-                  pointerLength={10}
-                  active={true}
-                  flyoutStyle={{
-                    fill: 'red',
-                  }}
-                  text={({datum}) => parseInt(datum.y)}
-                />
-              }
-            />
-          }>
-          <VictoryLine
-            interpolation="natural"
-            style={{
-              data: {stroke: 'black'},
-              parent: {border: '1px solid #ccc'},
-              labels: {fill: 'black'},
-            }}
-            data={asa}
-            x="DayOfYear"
-          />
-          <VictoryScatter
-            data={asa}
-            x="DayOfYear"
-            size={0.4}
-            style={{data: {fill: 'red'}}}
-          />
-        </VictoryChart>
-      </View>
-      <Text style={styles.text}>SPENDING</Text>
+      <LineChart />
+
+      <Text style={styles.text}>Spending</Text>
       <VictoryChart height={300} width={450} domainPadding={{x: 30, y: 20}}>
         <VictoryStack
           colorScale={[
@@ -117,44 +63,19 @@ const HomeScreen = ({navigation}) => {
         <VictoryAxis dependentAxis tickFormat={tick => `${tick}%`} />
         <VictoryAxis tickFormat={dataset.x} />
       </VictoryChart>
-      <Text style={styles.text}>Categories</Text>
-      <Picker
-        selectedValue={selectedValue}
-        style={{height: 50, width: 300}}
-        onValueChange={itemValue => setSelectedValue(itemValue)}>
-        {distinct_list.map((item, index) => {
-          return <Picker.Item label={item} value={item} key={index} />;
+      <ScrollView horizontal={true}>
+        {distinct_list.map((item, i) => {
+          return (
+            <View style={styles.card_template}>
+              <View style={styles.text_container}>
+                <Text style={styles.card_title}>{item}</Text>
+              </View>
+            </View>
+          );
         })}
-      </Picker>
-      <VictoryChart
-        height={300}
-        width={400}
-        scale={{x: 'time'}}
-        containerComponent={
-          <VictoryZoomContainer
-            responsive={false}
-            zoomDimension="x"
-            zoomDomain={zoomDomain}
-            onZoomDomainChange={handleZoom}
-          />
-        }>
-        {datasetCat
-          .filter(data => data.cat === selectedValue.toString())
-          .map((data, i) => {
-            let newArr = new Array(10).fill(0).map(v => ({...data}));
-            return (
-              <VictoryBar
-                barRatio={0.1}
-                alignment="start"
-                data={newArr}
-                x="x"
-                y="y"
-                labels={({datum}) => `${datum.y}`}
-              />
-            );
-          })}
-        <VictoryAxis tickFormat={x => month[new Date(x).getMonth()]} />
-      </VictoryChart>
+      </ScrollView>
+      <Text style={styles.text}>Categories</Text>
+      <CategoryChart />
     </ScrollView>
   );
 };
@@ -164,17 +85,36 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f5fcff',
   },
-  lineChart: {
-    backgroundColor: '#BCBCBC',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 10,
-    margin: 10,
-  },
+
   text: {
     fontWeight: 'bold',
     margin: 10,
+  },
+  card_template: {
+    width: 250,
+    height: 250,
+    boxShadow: '10px 10px 17px -12px rgba(0,0,0,0.75)',
+    margin: 10,
+  },
+  card_image: {
+    width: 250,
+    height: 250,
+    borderRadius: 10,
+    margin: 10,
+  },
+  text_container: {
+    position: 'absolute',
+    width: 250,
+    height: 30,
+    bottom: 0,
+    padding: 5,
+    backgroundColor: 'rgba(0,0,0, 0.3)',
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+    margin: 10,
+  },
+  card_title: {
+    color: 'white',
   },
 });
 export default HomeScreen;
