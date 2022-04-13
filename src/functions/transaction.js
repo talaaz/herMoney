@@ -114,7 +114,7 @@ const tranformedData = dataType => {
     case 'VIZ_03': {
       const transformed = transactionData.map(transaction => {
         var amount = transaction.Amount;
-        var date = transaction.Date;
+
         var Date2 = new Date(
           transaction.Date.slice(6, 10),
           transaction.Date.slice(3, 5),
@@ -128,13 +128,6 @@ const tranformedData = dataType => {
           }
         }
 
-        var transactionDate = transaction.Date;
-        transactionDate = transactionDate.replace(/./g, ':').split(':');
-        transactionDate = new Date(
-          transactionDate[2],
-          transactionDate[1],
-          transactionDate[0],
-        );
         var months = [
           'jan',
           'feb',
@@ -149,16 +142,6 @@ const tranformedData = dataType => {
           'nov',
           'dec',
         ];
-        balance += amount;
-        //Calculate day of year from 1-366
-        var now = transactionDate;
-        var start = new Date(transactionDate.getFullYear(), 0, 0);
-        var diff = now - start;
-        var oneDay = 1000 * 60 * 60 * 24;
-        var day = Math.floor(diff / oneDay);
-        if (day < 274) {
-          day += 366;
-        }
 
         return {
           x: Date2,

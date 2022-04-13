@@ -11,6 +11,8 @@ import {
   VictoryStack,
   VictoryLabel,
   VictoryScatter,
+  VictoryBrushContainer,
+  VictoryZoomContainer,
 } from 'victory-native';
 import transformedData from '../functions/transaction';
 import {Picker} from '@react-native-picker/picker';
@@ -25,9 +27,33 @@ const HomeScreen = ({navigation}) => {
     y: t.BankBalance,
   }));
   const [selectedValue, setSelectedValue] = useState('java');
+  let arr = [];
   var distinct_list = [...new Set(datasetCat.map(({cat}) => cat))];
+  const [selectedDomain, setSelectedDomain] = useState();
+  const [zoomDomain, setZoomDomain] = useState();
 
-  console.log(distinct_list);
+  const handleZoom = domain => {
+    setSelectedDomain(domain);
+  };
+
+  const handleBrush = domain => {
+    setZoomDomain(domain);
+  };
+  const month = [
+    'jan',
+    'feb',
+    'mar',
+    'apr',
+    'may',
+    'jun',
+    'jul',
+    'aug',
+    'sep',
+    'oct',
+    'nov',
+    'dec',
+  ];
+
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.text}>Total Balance</Text>
@@ -94,7 +120,7 @@ const HomeScreen = ({navigation}) => {
       <Text style={styles.text}>Categories</Text>
       <Picker
         selectedValue={selectedValue}
-        style={{height: 50, width: 150}}
+        style={{height: 50, width: 300}}
         onValueChange={itemValue => setSelectedValue(itemValue)}>
         {distinct_list.map((item, index) => {
           return <Picker.Item label={item} value={item} key={index} />;
@@ -102,23 +128,14 @@ const HomeScreen = ({navigation}) => {
       </Picker>
       <VictoryChart
         height={300}
-        width={450}
-        colorScale={['tomato', 'orange', 'gold']}
+        width={400}
+        scale={{x: 'time'}}
         containerComponent={
-          <VictoryVoronoiContainer
-            labels={({datum}) => parseInt(datum.y)}
-            labelComponent={
-              <VictoryTooltip
-                style={{fontSize: '15px', fill: 'black'}}
-                cornerRadius={15}
-                pointerLength={10}
-                active={true}
-                flyoutStyle={{
-                  fill: 'red',
-                }}
-                text={({datum}) => parseInt(datum.y)}
-              />
-            }
+          <VictoryZoomContainer
+            responsive={false}
+            zoomDimension="x"
+            zoomDomain={zoomDomain}
+            onZoomDomainChange={handleZoom}
           />
         }>
         {datasetCat
@@ -127,6 +144,7 @@ const HomeScreen = ({navigation}) => {
             let newArr = new Array(10).fill(0).map(v => ({...data}));
             return (
               <VictoryBar
+                barRatio={0.1}
                 alignment="start"
                 data={newArr}
                 x="x"
@@ -135,6 +153,7 @@ const HomeScreen = ({navigation}) => {
               />
             );
           })}
+        <VictoryAxis tickFormat={x => month[new Date(x).getMonth()]} />
       </VictoryChart>
     </ScrollView>
   );
