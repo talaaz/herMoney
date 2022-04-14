@@ -79,7 +79,6 @@ const tranformedData = dataType => {
         var transactionDate2 = moment(transaction.Date, 'DD.MM.YYYY').toDate();
         transaction.Month = parseInt(moment(transactionDate2).format('MM'));
 
-        console.log('here: ' + typeof transaction.Month);
         for (let i = 0; i < groupedData.length; i++) {
           if (transaction.Category === uniques[i]) {
             for (let j = 0; j < months.length; j++) {
@@ -101,7 +100,6 @@ const tranformedData = dataType => {
           }
         }
       }
-      console.log('here: ' + groupedData);
 
       return groupedData.map(data => {
         return data.map((amount, Month) => {

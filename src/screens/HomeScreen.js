@@ -49,7 +49,7 @@ const HomeScreen = ({navigation}) => {
 
   const datasetCat2 = transformedData('VIZ_04').data;
 
-  // console.log(datasetCat2);
+  console.log(datasetCat2);
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.text}>Total Balance</Text>
