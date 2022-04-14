@@ -26,7 +26,7 @@ import transformedData from '../functions/transaction';
 import {Picker} from '@react-native-picker/picker';
 import {LineChart} from '../component/LineChart';
 import {CategoryChart} from '../component/CategoryChart';
-
+import {PercentageChart} from '../component/PercentageChart';
 const HomeScreen = ({navigation}) => {
   const data = transformedData('VIZ_01').data;
   const dataset = transformedData('VIZ_02');
@@ -49,22 +49,14 @@ const HomeScreen = ({navigation}) => {
 
   const datasetCat2 = transformedData('VIZ_04').data;
 
-  console.log(datasetCat2);
+  console.log(dataset);
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.text}>Total Balance</Text>
       <LineChart />
 
       <Text style={styles.text}>Spending</Text>
-      <VictoryChart height={300} width={450} domainPadding={{x: 30, y: 20}}>
-        <VictoryStack colorScale={colorScale}>
-          {dataset.map((data, i) => {
-            return <VictoryBar data={data} key={i} />;
-          })}
-        </VictoryStack>
-        <VictoryAxis dependentAxis tickFormat={tick => `${tick}%`} />
-        <VictoryAxis tickFormat={dataset.x} />
-      </VictoryChart>
+      <PercentageChart />
       <ScrollView horizontal={true}>
         {distinct_list.map((item, i) => {
           return (
