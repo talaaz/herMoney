@@ -1,4 +1,6 @@
 import transactionData from '../data/csvjson.json';
+import moment from 'moment';
+
 const tranformedData = dataType => {
   switch (dataType) {
     case 'VIZ_01': {
@@ -73,16 +75,11 @@ const tranformedData = dataType => {
         if (amount < 0) {
           amount = amount * -1;
         }
-        var transactionDate = transaction.Date;
-        transactionDate = transactionDate.replace(/./g, ':').split(':');
 
-        transactionDate = new Date(
-          transactionDate[2],
-          transactionDate[1],
-          transactionDate[0],
-        );
-        transaction.Month = transactionDate.getMonth();
+        var transactionDate2 = moment(transaction.Date, 'DD.MM.YYYY').toDate();
+        transaction.Month = parseInt(moment(transactionDate2).format('MM'));
 
+        console.log('here: ' + typeof transaction.Month);
         for (let i = 0; i < groupedData.length; i++) {
           if (transaction.Category === uniques[i]) {
             for (let j = 0; j < months.length; j++) {
@@ -104,6 +101,7 @@ const tranformedData = dataType => {
           }
         }
       }
+      console.log('here: ' + groupedData);
 
       return groupedData.map(data => {
         return data.map((amount, Month) => {
@@ -152,7 +150,27 @@ const tranformedData = dataType => {
       });
       return {data: transformed};
     }
+    case 'VIZ_04': {
+      const transformed = transactionData.map(transaction => {
+        var amount = transaction.Amount;
+        if (typeof amount === 'string') {
+          amount = parseInt(amount.replace(',', ''));
+          if (isNaN(amount)) {
+            amount = 0;
+          }
+        }
 
+        var transactionDate = moment(transaction.Date, 'DD.MM.YYYY').toDate();
+        var formattedDate = moment(transactionDate).format('MMMM');
+
+        return {
+          amount: amount,
+          transactionDate: formattedDate,
+          Category: transaction.Category,
+        };
+      });
+      return {data: transformed};
+    }
     default: {
       return;
     }
