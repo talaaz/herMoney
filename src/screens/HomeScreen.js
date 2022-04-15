@@ -49,7 +49,23 @@ const HomeScreen = ({navigation}) => {
 
   const datasetCat2 = transformedData('VIZ_04').data;
 
-  console.log(dataset);
+  function myFunction(month, category) {
+    var total = 0;
+
+    datasetCat2
+      .filter(data => data.transactionDate === month)
+      .map((data, i) => {
+        // total = total + data.amount;
+        if (data.Category === category) {
+          total = total + data.amount;
+        } else {
+          0;
+        }
+        // console.log('total: ' + total);
+      });
+    return total.toFixed(3);
+  }
+
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.text}>Total Balance</Text>
@@ -61,6 +77,7 @@ const HomeScreen = ({navigation}) => {
         {distinct_list.map((item, i) => {
           return (
             <View style={styles.card_template}>
+              <Text>{myFunction('January', item)}</Text>
               <View
                 style={[
                   styles.text_container,

@@ -7,6 +7,9 @@ import {
   VictoryTooltip,
   VictoryVoronoiContainer,
   VictoryScatter,
+  VictoryZoomContainer,
+  createContainer,
+  VictoryAxis,
 } from 'victory-native';
 import transformedData from '../functions/transaction';
 
@@ -17,6 +20,9 @@ export const LineChart = ({}) => {
     x: t.DayOfYear,
     y: t.BankBalance,
   }));
+
+  const VictoryZoomVoronoiContainer = createContainer('zoom', 'voronoi');
+
   return (
     <View style={styles.lineChart}>
       <VictoryChart
@@ -24,18 +30,17 @@ export const LineChart = ({}) => {
         height={200}
         theme={VictoryTheme.material}
         containerComponent={
-          <VictoryVoronoiContainer
+          <VictoryZoomVoronoiContainer
+            responsive={false}
             labels={({datum}) => parseInt(datum.y)}
             labelComponent={
               <VictoryTooltip
+                flyoutStyle={{stroke: 'tomato', strokeWidth: 2, fill: 'white'}}
                 style={{fontSize: '15px', fill: 'black'}}
-                cornerRadius={15}
+                cornerRadius={2}
                 pointerLength={10}
                 active={true}
-                flyoutStyle={{
-                  fill: 'red',
-                }}
-                text={({datum}) => parseInt(datum.y)}
+                text={({datum}) => parseInt(datum.y) + 'DKK'}
               />
             }
           />
@@ -54,7 +59,19 @@ export const LineChart = ({}) => {
           data={asa}
           x="DayOfYear"
           size={0.4}
-          style={{data: {fill: 'red'}}}
+          style={{data: {fill: 'tomato'}}}
+        />
+        <VictoryAxis dependentAxis />
+        <VictoryAxis
+          style={{
+            axis: {stroke: '#000'},
+            ticks: {stroke: '#000'},
+            tickLabels: {
+              padding: 15,
+              angle: -45,
+              verticalAnchor: 'middle',
+            },
+          }}
         />
       </VictoryChart>
     </View>
@@ -67,7 +84,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 10,
+    borderRadius: 5,
     margin: 10,
   },
 });
