@@ -4,6 +4,7 @@ import {
   VictoryChart,
   VictoryAxis,
   VictoryBar,
+  VictoryLabel,
   VictoryZoomContainer,
 } from 'victory-native';
 import transformedData from '../functions/transaction';

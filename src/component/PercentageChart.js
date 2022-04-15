@@ -5,6 +5,8 @@ import {
   VictoryAxis,
   VictoryBar,
   VictoryStack,
+  VictoryVoronoiContainer,
+  VictoryTooltip,
 } from 'victory-native';
 import transformedData from '../functions/transaction';
 
@@ -22,14 +24,47 @@ export const PercentageChart = ({}) => {
   ];
   return (
     <View style={styles.lineChart}>
-      <VictoryChart height={300} width={400} domainPadding={{x: 30, y: 20}}>
+      <VictoryChart
+        height={300}
+        width={400}
+        domainPadding={{x: 30, y: 20}}
+        containerComponent={
+          <VictoryVoronoiContainer
+            labels={({datum}) => parseInt(datum.y)}
+            labelComponent={
+              <VictoryTooltip
+                style={{fontSize: '15px', fill: 'black'}}
+                cornerRadius={2}
+                pointerLength={30}
+                active={true}
+                flyoutStyle={{
+                  fill: 'white',
+                }}
+                text={({datum}) =>
+                  'The percentage is ' + parseInt(datum.y) + '%'
+                }
+              />
+            }
+          />
+        }>
         <VictoryStack colorScale={colorScale}>
           {dataset.map((data, i) => {
             return <VictoryBar data={data} key={i} />;
           })}
         </VictoryStack>
         <VictoryAxis dependentAxis tickFormat={tick => `${tick}%`} />
-        <VictoryAxis tickFormat={dataset.x} />
+        <VictoryAxis
+          style={{
+            axis: {stroke: '#000'},
+            ticks: {stroke: '#000'},
+            tickLabels: {
+              padding: 15,
+              angle: -45,
+              verticalAnchor: 'middle',
+            },
+          }}
+          tickFormat={dataset.x}
+        />
       </VictoryChart>
     </View>
   );
