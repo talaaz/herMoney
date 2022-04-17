@@ -100,7 +100,6 @@ const tranformedData = dataType => {
           }
         }
       }
-
       return groupedData.map(data => {
         return data.map((amount, Month) => {
           return {x: months[Month], y: amount};
@@ -148,7 +147,7 @@ const tranformedData = dataType => {
       });
       return {data: transformed};
     }
-    case 'VIZ_04': {
+    case 'GOALS': {
       const transformed = transactionData.map(transaction => {
         var amount = transaction.Amount;
         if (typeof amount === 'string') {
@@ -159,11 +158,42 @@ const tranformedData = dataType => {
         }
 
         var transactionDate = moment(transaction.Date, 'DD.MM.YYYY').toDate();
-        var formattedDate = moment(transactionDate).format('MMMM');
+        var formattedMonth = moment(transactionDate).format('MMMM');
+        var formattedYear = moment(transactionDate).format('YYYY');
 
         return {
           amount: amount,
-          transactionDate: formattedDate,
+          Category: transaction.Category,
+          transactionDateMonth: formattedMonth,
+          transactionDateYear: formattedYear,
+        };
+      });
+      return {data: transformed};
+    }
+    case 'DETAILS': {
+      const transformed = transactionData.map(transaction => {
+        var amount = transaction.Amount;
+        if (typeof amount === 'string') {
+          amount = parseInt(amount.replace(',', ''));
+          if (isNaN(amount)) {
+            amount = 0;
+          }
+        }
+
+        var transactionDate = moment(transaction.Date, 'DD.MM.YYYY').toDate();
+        var foramtFullDate = moment(transactionDate).format('YYYY-MM-DD');
+        var formattedMonth = moment(transactionDate).format('MMMM');
+        var formattedYear = moment(transactionDate).format('YYYY');
+
+        return {
+          amount: amount,
+          transactionDateMonth: formattedMonth,
+          transactionDateYear: formattedYear,
+          transactionDateFull: new Date(foramtFullDate),
+          transactionDateFull2: foramtFullDate,
+
+          Text: transaction.Text,
+          Status: transaction.Status,
           Category: transaction.Category,
         };
       });

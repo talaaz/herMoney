@@ -28,7 +28,20 @@ const BottomTabNavigator = () => {
           ),
         }}
       />
-      <Tab.Screen name="Details" component={DetailsScreen} />
+      <Tab.Screen
+        name="Details"
+        component={DetailsScreen}
+        options={{
+          tabBarLabel: 'Details',
+          tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons
+              name="account-details"
+              color={color}
+              size={size}
+            />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };
