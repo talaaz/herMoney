@@ -58,20 +58,20 @@ export const ScrollChart = ({}) => {
       <View style={{flexDirection: 'row'}}>
         <View style={{flex: 1}}>
           <Picker
-            selectedValue={selectedValueYear}
+            selectedValue={selectedValueMonth}
             style={{height: 50, width: 200}}
-            onValueChange={itemValue => setSelectedValueYear(itemValue)}>
-            {distinct_listYear.map((item, index) => {
+            onValueChange={itemValue => setSelectedValueMonth(itemValue)}>
+            {distinct_listMonth.map((item, index) => {
               return <Picker.Item label={item} value={item} key={index} />;
             })}
           </Picker>
         </View>
         <View style={{flex: 1}}>
           <Picker
-            selectedValue={selectedValueMonth}
+            selectedValue={selectedValueYear}
             style={{height: 50, width: 200}}
-            onValueChange={itemValue => setSelectedValueMonth(itemValue)}>
-            {distinct_listMonth.map((item, index) => {
+            onValueChange={itemValue => setSelectedValueYear(itemValue)}>
+            {distinct_listYear.map((item, index) => {
               return <Picker.Item label={item} value={item} key={index} />;
             })}
           </Picker>
