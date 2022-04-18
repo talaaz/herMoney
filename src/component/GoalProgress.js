@@ -17,24 +17,24 @@ export const GoalProgress = ({}) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
-    <View style={styles.lineChart}>
-      <View style={styles.mainbox}>
-        <View style={{flexDirection: 'row'}}>
-          <View style={{flex: 1}}>
-            <Text style={styles.title}>Your goal is to spare : {text} DKK</Text>
-          </View>
-          <View style={{flex: 1}}>
-            <IconButton
-              icon="pencil"
-              color={Colors.red500}
-              size={20}
-              onPress={() => setModalVisible(true)}
-            />
-          </View>
+    <View style={styles.container}>
+      <View style={{flexDirection: 'row'}}>
+        <View style={{flex: 1}}>
+          <Text style={styles.title}>Your goal is to spare : {text} DKK</Text>
         </View>
-
+        <View style={{flex: 1}}>
+          <IconButton
+            icon="pencil"
+            color={Colors.red500}
+            size={20}
+            onPress={() => setModalVisible(true)}
+          />
+        </View>
+      </View>
+      <Text>You are 50% away from your goal</Text>
+      <View style={styles.mainbox}>
         <Modal
-          animationType="slide"
+          animationType="fade"
           transparent={true}
           visible={modalVisible}
           onRequestClose={() => {
@@ -67,7 +67,7 @@ export const GoalProgress = ({}) => {
 };
 
 const styles = StyleSheet.create({
-  lineChart: {
+  container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -81,6 +81,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 20,
     paddingBottom: 30,
+    marginTop: 20,
+    marginBottom: 20,
   },
   title: {
     margin: 10,

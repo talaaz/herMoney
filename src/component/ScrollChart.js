@@ -83,16 +83,8 @@ export const ScrollChart = ({}) => {
           return (
             <View style={styles.card_template}>
               <View style={styles.card_amount}>
-                {/* <TextInput
-                  label="Your Goal"
-                  placeholder={text}
-                  value={text}
-                  onChangeText={text => setText(text)}
-                  right={<TextInput.Icon name="pencil" onPress={setText} />}
-                /> */}
-
-                <Text>
-                  {myFunction(selectedValueMonth, selectedValueYear, item)}
+                <Text style={styles.amountText}>
+                  {myFunction(selectedValueMonth, selectedValueYear, item)} DKK
                 </Text>
               </View>
               <View
@@ -121,11 +113,11 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   card_template: {
-    height: 250,
+    height: 150,
     boxShadow: '10px 10px 17px -12px rgba(0,0,0,0.75)',
     borderRadius: 10,
-    borderBottomLeftRadius: 10,
-    borderBottomRightRadius: 10,
+    borderBottomLeftRadius: 5,
+    borderBottomRightRadius: 5,
     shadowColor: 'black',
     shadowOffset: {width: 0, height: 2},
     shadowRadius: 6,
@@ -149,12 +141,16 @@ const styles = StyleSheet.create({
     bottom: 0,
     padding: 5,
     backgroundColor: 'rgba(0,0,0, 0.3)',
-    borderBottomLeftRadius: 10,
-    borderBottomRightRadius: 10,
+    borderBottomLeftRadius: 5,
+    borderBottomRightRadius: 5,
     margin: 0,
     flex: 2,
   },
   card_title: {
     color: 'white',
+  },
+  amountText: {
+    fontWeight: 'bold',
+    margin: 30,
   },
 });
