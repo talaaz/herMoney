@@ -25,9 +25,9 @@ const HomeScreen = ({navigation}) => {
       <Text style={styles.text}>Spending</Text>
       <PercentageChart />
       <ScrollChart />
-
-      <Text style={styles.text}>Categories</Text>
-      <CategoryChart />
+      {/* 
+      <Text style={styles.text}>Categories</Text> */}
+      {/* <CategoryChart /> */}
     </ScrollView>
   );
 };
@@ -35,7 +35,12 @@ const HomeScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5fcff',
+    backgroundColor: '#fef8fa',
+  },
+
+  text: {
+    fontWeight: 'bold',
+    margin: 10,
   },
 });
 export default HomeScreen;

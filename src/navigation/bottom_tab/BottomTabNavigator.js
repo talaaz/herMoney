@@ -10,11 +10,11 @@ const BottomTabNavigator = () => {
 
   const screenOptionStyle = {
     headerStyle: {
-      backgroundColor: '#323232',
+      backgroundColor: '#ad1638',
     },
     headerTintColor: '#e5e5e5',
     headerBackTitle: '',
-    tabBarStyle: [{backgroundColor: '#323232'}],
+    tabBarStyle: [{backgroundColor: '#ad1638'}],
   };
   return (
     <Tab.Navigator screenOptions={screenOptionStyle}>
@@ -22,9 +22,13 @@ const BottomTabNavigator = () => {
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: 'Overview',
           tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <MaterialCommunityIcons
+              name="trending-up"
+              color="white"
+              size={size}
+            />
           ),
         }}
       />
@@ -34,11 +38,7 @@ const BottomTabNavigator = () => {
         options={{
           tabBarLabel: 'Details',
           tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons
-              name="account-details"
-              color={color}
-              size={size}
-            />
+            <MaterialCommunityIcons name="cash" color="white" size={size} />
           ),
         }}
       />

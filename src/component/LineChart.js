@@ -80,11 +80,17 @@ export const LineChart = ({}) => {
 
 const styles = StyleSheet.create({
   lineChart: {
-    backgroundColor: '#BCBCBC',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 5,
-    margin: 10,
+    margin: 5,
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 2},
+    shadowRadius: 6,
+    shadowOpacity: 0.26,
+    elevation: 8,
+    backgroundColor: 'white',
+    padding: 20,
   },
 });

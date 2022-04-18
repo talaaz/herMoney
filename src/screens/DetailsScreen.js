@@ -24,7 +24,9 @@ const DetailsScreen = ({props}) => {
               {d.amount > 0 ? (
                 <View style={styles.transactionContainerPos}>
                   <Text style={styles.transactionTitlePos}>{d.Text}</Text>
-                  <Text style={styles.textPos}>Amount spent: {d.amount}</Text>
+                  <Text style={styles.textPos}>
+                    Amount received: {d.amount}
+                  </Text>
                   <Text style={styles.textPos}>
                     Date: {d.transactionDateFull2}
                   </Text>
@@ -33,9 +35,7 @@ const DetailsScreen = ({props}) => {
                 <View style={styles.transactionContainerNeg}>
                   <Text style={styles.transactionTitleNeg}>{d.Text}</Text>
 
-                  <Text style={styles.textNeg}>
-                    Amount received: {d.amount}
-                  </Text>
+                  <Text style={styles.textNeg}>Amount spent: {d.amount}</Text>
 
                   <Text style={styles.textNeg}>
                     Date: {d.transactionDateFull2}
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     borderRadius: 4,
-    backgroundColor: '#fbcda9',
+    backgroundColor: '#f6b4c3',
   },
   transactionContainerPos: {
     marginVertical: 6,
@@ -71,14 +71,14 @@ const styles = StyleSheet.create({
   },
   transactionTitleNeg: {
     fontWeight: 'bold',
-    color: 'red',
+    color: '#c4193f',
   },
 
   textPos: {
     color: 'green',
   },
   textNeg: {
-    color: 'red',
+    color: '#c4193f',
   },
 });
 export default DetailsScreen;
