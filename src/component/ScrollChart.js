@@ -3,6 +3,7 @@ import {ScrollView, StyleSheet, View, Text} from 'react-native';
 import {TextInput} from 'react-native-paper';
 import transformedData from '../functions/transaction';
 import {Picker} from '@react-native-picker/picker';
+import {ProgressBar, Colors} from 'react-native-paper';
 
 export const ScrollChart = ({}) => {
   const datasetCat2 = transformedData('GOALS').data;
@@ -82,13 +83,14 @@ export const ScrollChart = ({}) => {
           return (
             <View style={styles.card_template}>
               <View style={styles.card_amount}>
-                <TextInput
+                {/* <TextInput
                   label="Your Goal"
                   placeholder={text}
                   value={text}
                   onChangeText={text => setText(text)}
                   right={<TextInput.Icon name="pencil" onPress={setText} />}
-                />
+                /> */}
+
                 <Text>
                   {myFunction(selectedValueMonth, selectedValueYear, item)}
                 </Text>

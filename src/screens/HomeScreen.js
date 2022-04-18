@@ -16,6 +16,9 @@ import {CategoryChart} from '../component/CategoryChart';
 import {PercentageChart} from '../component/PercentageChart';
 import {TextInput, IconButton, Button} from 'react-native-paper';
 import {ScrollChart} from '../component/ScrollChart';
+import {GoalProgress} from '../component/GoalProgress';
+import {ProgressBar, Colors} from 'react-native-paper';
+
 const HomeScreen = ({navigation}) => {
   return (
     <ScrollView style={styles.container}>
@@ -28,6 +31,8 @@ const HomeScreen = ({navigation}) => {
       {/* 
       <Text style={styles.text}>Categories</Text> */}
       {/* <CategoryChart /> */}
+
+      <GoalProgress />
     </ScrollView>
   );
 };
