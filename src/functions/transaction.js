@@ -41,6 +41,8 @@ const tranformedData = dataType => {
     }
     case 'VIZ_02': {
       var groupedData = [[], [], [], [], [], [], [], [], []];
+      var groupedData2 = [[], [], [], [], [], [], [], [], []];
+
       var months = [
         'jan',
         'feb',
@@ -64,7 +66,7 @@ const tranformedData = dataType => {
           groupedData[i][month] = 0;
         }
       }
-      transactionData.map(transaction => {
+      const transformed = transactionData.map(transaction => {
         var amount = transaction.Amount;
         if (typeof amount === 'string') {
           amount = parseInt(amount.replace(',', ''));
@@ -78,12 +80,13 @@ const tranformedData = dataType => {
 
         var transactionDate2 = moment(transaction.Date, 'DD.MM.YYYY').toDate();
         transaction.Month = parseInt(moment(transactionDate2).format('MM'));
-
+        transaction.Category = transaction.Category;
         for (let i = 0; i < groupedData.length; i++) {
           if (transaction.Category === uniques[i]) {
             for (let j = 0; j < months.length; j++) {
               if (transaction.Month === j + 1) {
                 groupedData[i][j] += amount;
+                groupedData2[i][j] = transaction.Category;
                 totals[j] += amount;
               }
             }
@@ -100,9 +103,14 @@ const tranformedData = dataType => {
           }
         }
       }
+      console.log(groupedData2);
       return groupedData.map(data => {
-        return data.map((amount, Month) => {
-          return {x: months[Month], y: amount};
+        return data.map((amount, Month, Category) => {
+          return {
+            x: months[Month],
+            y: amount,
+            z: data.Category,
+          };
         });
       });
     }

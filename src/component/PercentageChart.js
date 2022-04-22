@@ -7,11 +7,16 @@ import {
   VictoryStack,
   VictoryVoronoiContainer,
   VictoryTooltip,
+  VictoryLabel,
+  VictoryLegend,
 } from 'victory-native';
 import transformedData from '../functions/transaction';
 
 export const PercentageChart = ({}) => {
   const dataset = transformedData('VIZ_02');
+  const datasetCat2 = transformedData('GOALS').data;
+
+  var distinct_list = [...new Set(datasetCat2.map(({Category}) => Category))];
   const colorScale = [
     '#003f5c',
     '#2f4b7c',
@@ -22,8 +27,16 @@ export const PercentageChart = ({}) => {
     '#ff7c43',
     '#ffa600',
   ];
+  console.log(dataset);
+  const toVictoryLegend = line => {
+    return line.color
+      ? {
+          name: line,
+        }
+      : {name: line};
+  };
   return (
-    <View style={styles.PrecentageChart}>
+    <View style={styles.groupedData}>
       <VictoryChart
         height={300}
         width={400}
@@ -43,6 +56,10 @@ export const PercentageChart = ({}) => {
                 text={({datum}) =>
                   'The percentage is ' + parseInt(datum.y) + '%'
                 }
+
+                // ({datum}) =>
+                // 'The percentage is ' + parseInt(datum.y) + '%'
+                // }
               />
             }
           />
@@ -52,7 +69,31 @@ export const PercentageChart = ({}) => {
             return <VictoryBar data={data} key={i} />;
           })}
         </VictoryStack>
-        <VictoryAxis dependentAxis tickFormat={tick => `${tick}%`} />
+        <VictoryLegend
+          x={125}
+          y={50}
+          // title="Legend"
+          // centerTitle
+          orientation="vertical"
+          // gutter={20}
+          // style={{border: {stroke: 'black'}, title: {fontSize: 10}}}
+          data={distinct_list.map((s, idx) => {
+            const item = toVictoryLegend(s);
+            return {...item, symbol: {fill: colorScale[idx]}};
+          })}
+        />
+        <VictoryLabel
+          x={225}
+          y={25}
+          textAnchor="middle"
+          text="Spending based on categories"
+        />
+
+        <VictoryAxis
+          dependentAxis
+          tickFormat={tick => `${tick}%`}
+          label="percentage of each category"
+        />
         <VictoryAxis
           style={{
             axis: {stroke: '#000'},
