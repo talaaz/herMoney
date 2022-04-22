@@ -1,6 +1,21 @@
 import transactionData from '../data/csvjson.json';
 import moment from 'moment';
 
+const commaSplit = amount => {
+  if (amount.includes(',')) {
+    return parseInt(amount.replace(',', ''));
+  } else {
+    return parseInt(amount);
+  }
+};
+
+const getNum = val => {
+  if (isNaN(val)) {
+    return 0;
+  }
+  return val;
+};
+
 const tranformedData = dataType => {
   switch (dataType) {
     case 'VIZ_01': {
@@ -16,6 +31,13 @@ const tranformedData = dataType => {
         }
 
         var transactionDate = transaction.Date;
+        var transactionDate2 = moment(transaction.Date, 'DD.MM.YYYY').toDate();
+        var month = parseInt(moment(transactionDate2).format('MM'));
+        var day = parseInt(moment(transactionDate2).format('DD'));
+        var year = parseInt(moment(transactionDate2).format('YYY'));
+
+        const date = moment({day, month, year});
+
         transactionDate = transactionDate.replace(/./g, ':').split(':');
         transactionDate = new Date(
           transactionDate[2],
@@ -33,7 +55,7 @@ const tranformedData = dataType => {
           day += 366;
         }
         return {
-          DayOfYear: day,
+          DayOfYear: date.dayOfYear(),
           BankBalance: balance,
         };
       });
@@ -103,7 +125,6 @@ const tranformedData = dataType => {
           }
         }
       }
-      console.log(groupedData2);
       return groupedData.map(data => {
         return data.map((amount, Month, Category) => {
           return {
@@ -205,6 +226,22 @@ const tranformedData = dataType => {
           Category: transaction.Category,
         };
       });
+      return {data: transformed};
+    }
+    case 'TotalAmount': {
+      const transformed = transactionData.map(transaction => {
+        var amount = transaction.Amount;
+        if (typeof amount === 'string') {
+          amount = parseInt(amount.replace(',', ''));
+          if (isNaN(amount)) {
+            amount = 0;
+          }
+        }
+        return {
+          amount: amount,
+        };
+      });
+
       return {data: transformed};
     }
     default: {

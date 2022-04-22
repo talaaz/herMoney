@@ -7,6 +7,16 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
 } from 'react-native';
+import {
+  VictoryChart,
+  VictoryAxis,
+  VictoryBar,
+  VictoryStack,
+  VictoryVoronoiContainer,
+  VictoryTooltip,
+  VictoryLabel,
+  VictoryLegend,
+} from 'victory-native';
 import transformedData from '../functions/transaction';
 
 const DetailsScreen = ({props}) => {

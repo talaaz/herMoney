@@ -1,5 +1,6 @@
 import React from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
+import {DefaultTheme} from 'react-native-paper';
 import {
   VictoryChart,
   VictoryTheme,
@@ -8,10 +9,12 @@ import {
   VictoryVoronoiContainer,
   VictoryScatter,
   VictoryZoomContainer,
+  VictoryLabel,
   createContainer,
   VictoryAxis,
 } from 'victory-native';
 import transformedData from '../functions/transaction';
+import moment from 'moment';
 
 export const LineChart = ({}) => {
   const data = transformedData('VIZ_01').data;
@@ -20,7 +23,14 @@ export const LineChart = ({}) => {
     x: t.DayOfYear,
     y: t.BankBalance,
   }));
+  console.log(
+    'days##########################################################################',
+  );
 
+  console.log(asa);
+  console.log(
+    'days##########################################################################',
+  );
   const VictoryZoomVoronoiContainer = createContainer('zoom', 'voronoi');
 
   return (
@@ -40,7 +50,9 @@ export const LineChart = ({}) => {
                 cornerRadius={2}
                 pointerLength={10}
                 active={true}
-                text={({datum}) => parseInt(datum.y) + 'DKK'}
+                text={({datum}) =>
+                  'Day' + datum.x + ' ' + parseInt(datum.y) + 'DKK'
+                }
               />
             }
           />
@@ -61,6 +73,12 @@ export const LineChart = ({}) => {
           size={0.4}
           style={{data: {fill: 'tomato'}}}
         />
+        <VictoryLabel
+          x={225}
+          y={25}
+          textAnchor="middle"
+          text="Spending Timeline"
+        />
         <VictoryAxis dependentAxis />
         <VictoryAxis
           style={{
@@ -72,6 +90,7 @@ export const LineChart = ({}) => {
               verticalAnchor: 'middle',
             },
           }}
+          tickFormat={asa.x}
         />
       </VictoryChart>
     </View>

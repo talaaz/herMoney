@@ -20,8 +20,19 @@ import {GoalProgress} from '../component/GoalProgress';
 import {ProgressBar, Colors} from 'react-native-paper';
 
 const HomeScreen = ({navigation}) => {
+  const total = transformedData('TotalAmount').data;
+
+  const sum = total.reduce((accumulator, object) => {
+    return accumulator + object.amount;
+  }, 0);
+
   return (
     <ScrollView style={styles.container}>
+      <Text style={styles.text}>Total Balance</Text>
+
+      <View style={styles.totalCard}>
+        <Text style={styles.text}>You have: {sum.toFixed(2)} </Text>
+      </View>
       <Text style={styles.text}>Total Balance</Text>
       <LineChart />
 
@@ -46,6 +57,20 @@ const styles = StyleSheet.create({
   text: {
     fontWeight: 'bold',
     margin: 10,
+  },
+  totalCard: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 5,
+    margin: 5,
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 2},
+    shadowRadius: 6,
+    shadowOpacity: 0.26,
+    elevation: 8,
+    backgroundColor: 'white',
+    padding: 20,
   },
 });
 export default HomeScreen;

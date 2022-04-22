@@ -1,5 +1,13 @@
-import React from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
+import React, {useState} from 'react';
+import {
+  ScrollView,
+  StyleSheet,
+  View,
+  Text,
+  Modal,
+  Pressable,
+  Alert,
+} from 'react-native';
 import {
   VictoryChart,
   VictoryAxis,
@@ -12,10 +20,12 @@ import {
 } from 'victory-native';
 import transformedData from '../functions/transaction';
 
+import {ProgressBar, Colors, IconButton, TextInput} from 'react-native-paper';
+
 export const PercentageChart = ({}) => {
   const dataset = transformedData('VIZ_02');
   const datasetCat2 = transformedData('GOALS').data;
-
+  const [showLegend, setShowLegend] = useState('false');
   var distinct_list = [...new Set(datasetCat2.map(({Category}) => Category))];
   const colorScale = [
     '#003f5c',
@@ -27,7 +37,6 @@ export const PercentageChart = ({}) => {
     '#ff7c43',
     '#ffa600',
   ];
-  console.log(dataset);
   const toVictoryLegend = line => {
     return line.color
       ? {
@@ -36,7 +45,52 @@ export const PercentageChart = ({}) => {
       : {name: line};
   };
   return (
-    <View style={styles.groupedData}>
+    <View style={styles.PrecentageChart}>
+      <View style={{flexDirection: 'row'}}>
+        <View style={{flex: 1}}>
+          <Text style={styles.title}>Show categories</Text>
+        </View>
+        <View style={{flex: 1}}>
+          <IconButton
+            icon="eye"
+            color={Colors.red500}
+            size={20}
+            onPress={() => setShowLegend(true)}
+          />
+        </View>
+      </View>
+      <View style={styles.mainbox}>
+        <Modal
+          animationType="fade"
+          transparent={true}
+          visible={showLegend}
+          onRequestClose={() => {
+            Alert.alert('Modal has been closed.');
+            setShowLegend(!showLegend);
+          }}>
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <IconButton
+                icon="close"
+                color={Colors.red500}
+                size={20}
+                onPress={() => setShowLegend(!showLegend)}
+              />
+              <VictoryLegend
+                // title="Legend"
+                // centerTitle
+                orientation="vertical"
+                // gutter={20}
+                // style={{border: {stroke: 'black'}, title: {fontSize: 10}}}
+                data={distinct_list.map((s, idx) => {
+                  const item = toVictoryLegend(s);
+                  return {...item, symbol: {fill: colorScale[idx]}};
+                })}
+              />
+            </View>
+          </View>
+        </Modal>
+      </View>
       <VictoryChart
         height={300}
         width={400}
@@ -56,10 +110,6 @@ export const PercentageChart = ({}) => {
                 text={({datum}) =>
                   'The percentage is ' + parseInt(datum.y) + '%'
                 }
-
-                // ({datum}) =>
-                // 'The percentage is ' + parseInt(datum.y) + '%'
-                // }
               />
             }
           />
@@ -69,19 +119,7 @@ export const PercentageChart = ({}) => {
             return <VictoryBar data={data} key={i} />;
           })}
         </VictoryStack>
-        <VictoryLegend
-          x={125}
-          y={50}
-          // title="Legend"
-          // centerTitle
-          orientation="vertical"
-          // gutter={20}
-          // style={{border: {stroke: 'black'}, title: {fontSize: 10}}}
-          data={distinct_list.map((s, idx) => {
-            const item = toVictoryLegend(s);
-            return {...item, symbol: {fill: colorScale[idx]}};
-          })}
-        />
+
         <VictoryLabel
           x={225}
           y={25}
@@ -93,6 +131,13 @@ export const PercentageChart = ({}) => {
           dependentAxis
           tickFormat={tick => `${tick}%`}
           label="percentage of each category"
+          style={{
+            tickLabels: {
+              padding: 0,
+              verticalAnchor: 'middle',
+              fontSize: 8,
+            },
+          }}
         />
         <VictoryAxis
           style={{
@@ -125,5 +170,52 @@ const styles = StyleSheet.create({
     elevation: 8,
     backgroundColor: 'white',
     padding: 20,
+  },
+  mainbox: {
+    //justifyContent: 'space-between',
+    padding: 2,
+    width: 350,
+  },
+  centeredView: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 10,
+    height: 600,
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 5,
+    padding: 20,
+
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+    width: 290,
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
+  },
+  buttonOpen: {
+    backgroundColor: '#F194FF',
+  },
+  buttonClose: {
+    backgroundColor: '#ad1638',
+  },
+  textStyle: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: 'center',
   },
 });
