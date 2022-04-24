@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {DefaultTheme} from 'react-native-paper';
+import {Picker} from '@react-native-picker/picker';
 import {
   VictoryChart,
   VictoryTheme,
@@ -18,23 +19,37 @@ import moment from 'moment';
 
 export const LineChart = ({}) => {
   const data = transformedData('VIZ_01').data;
-
-  const asa = data.map(t => ({
-    x: t.DayOfYear,
-    y: t.BankBalance,
-  }));
-  console.log(
-    'days##########################################################################',
-  );
-
-  console.log(asa);
-  console.log(
-    'days##########################################################################',
-  );
+  
   const VictoryZoomVoronoiContainer = createContainer('zoom', 'voronoi');
+  const [selectedValueQuarter, setSelectedValueQuarter] = useState(
+    'Quarter one',
+  );
+
+  const filteredData = data.filter(element => {
+    return element.Quarter === selectedValueQuarter;
+
+  })
+
+  const finalData = filteredData.map(t => {
+    return {
+      x: t.DayOfYear,
+      y: t.BankBalance,
+    }
+  })
 
   return (
-    <View style={styles.lineChart}>
+    <View>
+      <Picker
+      selectedValue={selectedValueQuarter}
+      onValueChange={itemValue => setSelectedValueQuarter(itemValue)}
+            style={{height: 50, width: 200}}>
+            <Picker.Item label='Quarter One' value='Quarter One' key={0} />
+            <Picker.Item label='Quarter Two' value='Quarter Two' key={1} />
+            <Picker.Item label='Quarter Three' value='Quarter Three' key={2} />
+            <Picker.Item label='Quarter Four' value='Quarter Four' key={3} />
+          </Picker>
+          <View style={styles.lineChart}>
+      
       <VictoryChart
         width={400}
         height={200}
@@ -64,11 +79,11 @@ export const LineChart = ({}) => {
             parent: {border: '1px solid #ccc'},
             labels: {fill: 'black'},
           }}
-          data={asa}
+          data={finalData}
           x="DayOfYear"
         />
         <VictoryScatter
-          data={asa}
+          data={finalData}
           x="DayOfYear"
           size={0.4}
           style={{data: {fill: 'tomato'}}}
@@ -89,11 +104,16 @@ export const LineChart = ({}) => {
               angle: -45,
               verticalAnchor: 'middle',
             },
+            
           }}
-          tickFormat={asa.x}
+          tickFormat={finalData.x}
+          label="Day of year"
         />
       </VictoryChart>
     </View>
+
+    </View>
+    
   );
 };
 

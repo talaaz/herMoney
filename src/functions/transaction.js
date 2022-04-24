@@ -22,6 +22,7 @@ const tranformedData = dataType => {
       var balance = 20000;
       const transformed = transactionData.map(transaction => {
         var amount = transaction.Amount;
+        var quarter;
         // var amount = Object.entries(transactionData[index])[4][1]
         if (typeof amount === 'string') {
           amount = parseInt(amount.replace(',', ''));
@@ -37,7 +38,6 @@ const tranformedData = dataType => {
         var year = parseInt(moment(transactionDate2).format('YYY'));
 
         const date = moment({day, month, year});
-
         transactionDate = transactionDate.replace(/./g, ':').split(':');
         transactionDate = new Date(
           transactionDate[2],
@@ -51,12 +51,22 @@ const tranformedData = dataType => {
         var diff = now - start;
         var oneDay = 1000 * 60 * 60 * 24;
         var day = Math.floor(diff / oneDay);
-        if (day < 274) {
-          day += 366;
+        if (month <= 3) {
+          quarter = 'Quarter One';
+        }else if (month > 3 && month <= 6) {
+          quarter = 'Quarter Twu';
+        }else if (month > 6 && month <= 9) {
+          quarter = 'Quarter Three';
+        }else if (month > 9){
+          quarter = 'Quarter Four';
         }
+        // if (day < 274) {
+        //   day += 366;
+        // }
         return {
           DayOfYear: date.dayOfYear(),
           BankBalance: balance,
+          Quarter: quarter,
         };
       });
       return {data: transformed};
@@ -229,6 +239,7 @@ const tranformedData = dataType => {
       return {data: transformed};
     }
     case 'TotalAmount': {
+      var balance = 20000
       const transformed = transactionData.map(transaction => {
         var amount = transaction.Amount;
         if (typeof amount === 'string') {

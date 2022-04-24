@@ -21,17 +21,19 @@ import {ProgressBar, Colors} from 'react-native-paper';
 
 const HomeScreen = ({navigation}) => {
   const total = transformedData('TotalAmount').data;
-
+  
   const sum = total.reduce((accumulator, object) => {
     return accumulator + object.amount;
   }, 0);
 
+  var dagar = 20000 + sum;
+
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.text}>Total Balance</Text>
+      <Text style={styles.text}>Current Balance</Text>
 
       <View style={styles.totalCard}>
-        <Text style={styles.text}>You have: {sum.toFixed(2)} </Text>
+        <Text style={styles.text}>You have: {dagar.toFixed(2)} </Text>
       </View>
       <Text style={styles.text}>Total Balance</Text>
       <LineChart />
