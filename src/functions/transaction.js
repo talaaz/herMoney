@@ -20,10 +20,23 @@ const tranformedData = dataType => {
   switch (dataType) {
     case 'VIZ_01': {
       var balance = 20000;
+      var months = [
+        'jan',
+        'feb',
+        'mar',
+        'apr',
+        'may',
+        'jun',
+        'jul',
+        'aug',
+        'sep',
+        'oct',
+        'nov',
+        'dec',
+      ];
       const transformed = transactionData.map(transaction => {
         var amount = transaction.Amount;
         var quarter;
-        // var amount = Object.entries(transactionData[index])[4][1]
         if (typeof amount === 'string') {
           amount = parseInt(amount.replace(',', ''));
           if (isNaN(amount)) {
@@ -34,7 +47,7 @@ const tranformedData = dataType => {
         var transactionDate = transaction.Date;
         var transactionDate2 = moment(transaction.Date, 'DD.MM.YYYY').toDate();
         var month = parseInt(moment(transactionDate2).format('MM'));
-        var day = parseInt(moment(transactionDate2).format('DD'));
+        var dayf = parseInt(moment(transactionDate2).format('DD'));
         var year = parseInt(moment(transactionDate2).format('YYY'));
 
         const date = moment({day, month, year});
@@ -60,20 +73,18 @@ const tranformedData = dataType => {
         }else if (month > 9){
           quarter = 'Quarter Four';
         }
-        // if (day < 274) {
-        //   day += 366;
-        // }
         return {
           DayOfYear: date.dayOfYear(),
           BankBalance: balance,
           Quarter: quarter,
+          Month: months[month-1],
+          Day: dayf,
         };
       });
       return {data: transformed};
     }
     case 'VIZ_02': {
       var groupedData = [[], [], [], [], [], [], [], [], []];
-      var groupedData2 = [[], [], [], [], [], [], [], [], []];
 
       var months = [
         'jan',
@@ -118,7 +129,6 @@ const tranformedData = dataType => {
             for (let j = 0; j < months.length; j++) {
               if (transaction.Month === j + 1) {
                 groupedData[i][j] += amount;
-                groupedData2[i][j] = transaction.Category;
                 totals[j] += amount;
               }
             }
@@ -133,14 +143,16 @@ const tranformedData = dataType => {
           } else {
             groupedData[i][j] = currentValue;
           }
+          groupedData[i]['cat'] = uniques[i];
         }
       }
+      console.log(groupedData);
       return groupedData.map(data => {
-        return data.map((amount, Month, Category) => {
+        return data.map((amount, Month) => {
           return {
             x: months[Month],
             y: amount,
-            z: data.Category,
+            z: data.cat,
           };
         });
       });

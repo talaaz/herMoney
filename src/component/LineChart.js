@@ -34,8 +34,11 @@ export const LineChart = ({}) => {
     return {
       x: t.DayOfYear,
       y: t.BankBalance,
+      month: t.Month,
+      day: t.Day,
     }
   })
+
 
   return (
     <View>
@@ -66,7 +69,7 @@ export const LineChart = ({}) => {
                 pointerLength={10}
                 active={true}
                 text={({datum}) =>
-                  'Day' + datum.x + ' ' + parseInt(datum.y) + 'DKK'
+                  datum.day + ' ' + datum.month + ': ' + parseInt(datum.y) + ' ' + 'DKK'
                 }
               />
             }
@@ -92,7 +95,7 @@ export const LineChart = ({}) => {
           x={225}
           y={25}
           textAnchor="middle"
-          text="Spending Timeline"
+          text="Bankbalance over time"
         />
         <VictoryAxis dependentAxis />
         <VictoryAxis

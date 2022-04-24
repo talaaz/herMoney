@@ -24,6 +24,7 @@ import {ProgressBar, Colors, IconButton, TextInput} from 'react-native-paper';
 
 export const PercentageChart = ({}) => {
   const dataset = transformedData('VIZ_02');
+  console.log(dataset);
   const datasetCat2 = transformedData('GOALS').data;
   const [showLegend, setShowLegend] = useState('false');
   var distinct_list = [...new Set(datasetCat2.map(({Category}) => Category))];
@@ -108,7 +109,7 @@ export const PercentageChart = ({}) => {
                   fill: 'white',
                 }}
                 text={({datum}) =>
-                  'The percentage is ' + parseInt(datum.y) + '%'
+                  datum.z + ': ' + parseInt(datum.y) + '%'
                 }
               />
             }
