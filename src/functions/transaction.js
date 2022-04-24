@@ -146,7 +146,6 @@ const tranformedData = dataType => {
           groupedData[i]['cat'] = uniques[i];
         }
       }
-      console.log(groupedData);
       return groupedData.map(data => {
         return data.map((amount, Month) => {
           return {
