@@ -20,13 +20,13 @@ export const ScrollChart = ({}) => {
 
   const colorScale = [
     '#003f5c',
-    '#2f4b7c',
-    '#665191',
+    '#bad80a',
+    '#ff8c00',
     '#a05195',
-    '#d45087',
+    '#00188f',
     '#f95d6a',
-    '#ff7c43',
-    '#ffa600',
+    '#00bcf2',
+    '#ff8c00',
   ];
 
   function myFunction(month, year, category) {
