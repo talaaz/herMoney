@@ -53,16 +53,16 @@ const DetailsScreen = ({props}) => {
 
 const styles = StyleSheet.create({
   transactionContainer: {
-    marginVertical: 4,
-    padding: 10,
-    margin: 6,
-    borderRadius: 4,
+    marginVertical: 2,
+    padding: 6,
+    margin: 5,
+    borderRadius: 1,
     flexDirection: 'row',
     shadowColor: 'black',
     shadowOffset: {width: 0, height: 2},
-    shadowRadius: 6,
-    shadowOpacity: 0.26,
-    elevation: 8,
+    shadowRadius: 2,
+    shadowOpacity: 0.16,
+    elevation: 2,
     backgroundColor: 'white',
   },
   transactionTitle: {
