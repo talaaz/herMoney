@@ -31,27 +31,18 @@ const DetailsScreen = ({props}) => {
         {data2.map(d => {
           return (
             <TouchableWithoutFeedback onPress={() => {}}>
-              {d.amount > 0 ? (
-                <View style={styles.transactionContainerPos}>
-                  <Text style={styles.transactionTitlePos}>{d.Text}</Text>
-                  <Text style={styles.textPos}>
-                    Amount received: {d.amount}
-                  </Text>
-                  <Text style={styles.textPos}>
-                    Date: {d.transactionDateFull2}
-                  </Text>
+              <View style={styles.transactionContainer}>
+                <View style={{flex: 1}}>
+                  <Text style={styles.transactionTitle}>{d.Text}</Text>
+                  <Text>Amount received:</Text>
+                  <Text>Date: {d.transactionDateFull2}</Text>
                 </View>
-              ) : (
-                <View style={styles.transactionContainerNeg}>
-                  <Text style={styles.transactionTitleNeg}>{d.Text}</Text>
-
-                  <Text style={styles.textNeg}>Amount spent: {d.amount}</Text>
-
-                  <Text style={styles.textNeg}>
-                    Date: {d.transactionDateFull2}
-                  </Text>
-                </View>
-              )}
+                {d.amount > 0 ? (
+                  <Text style={styles.textPos}> {d.amount}</Text>
+                ) : (
+                  <Text style={styles.textNeg}>{d.amount}</Text>
+                )}
+              </View>
             </TouchableWithoutFeedback>
           );
         })}
@@ -61,34 +52,33 @@ const DetailsScreen = ({props}) => {
 };
 
 const styles = StyleSheet.create({
-  transactionContainerNeg: {
-    marginVertical: 6,
+  transactionContainer: {
+    marginVertical: 4,
     padding: 10,
-    margin: 10,
+    margin: 6,
     borderRadius: 4,
-    backgroundColor: '#f6b4c3',
+    flexDirection: 'row',
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 2},
+    shadowRadius: 6,
+    shadowOpacity: 0.26,
+    elevation: 8,
+    backgroundColor: 'white',
   },
-  transactionContainerPos: {
-    marginVertical: 6,
-    padding: 10,
-    margin: 10,
-    borderRadius: 4,
-    backgroundColor: '#A9FBCD',
-  },
-  transactionTitlePos: {
+  transactionTitle: {
     fontWeight: 'bold',
-    color: 'green',
-  },
-  transactionTitleNeg: {
-    fontWeight: 'bold',
-    color: '#c4193f',
+    color: 'black',
   },
 
   textPos: {
     color: 'green',
+    fontSize: 18,
+    textAlign: 'right',
   },
   textNeg: {
     color: '#c4193f',
+    fontSize: 18,
+    textAlign: 'right',
   },
 });
 export default DetailsScreen;
