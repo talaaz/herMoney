@@ -15,25 +15,29 @@ const getNum = val => {
   }
   return val;
 };
-
-const tranformedData = dataType => {
+const months = [
+  'jan',
+  'feb',
+  'mar',
+  'apr',
+  'may',
+  'jun',
+  'jul',
+  'aug',
+  'sep',
+  'oct',
+  'nov',
+  'dec',
+];
+// interval = { start: xx, end: xx }
+const tranformedData = (dataType, interval) => {
   switch (dataType) {
     case 'VIZ_01': {
+      var currentDate = moment(new Date(),'DD.MM.YYYY');
+      const currentDayOfYear = currentDate.dayOfYear();
+      var quarterBoundary = currentDayOfYear - 90;
       var balance = 20000;
-      var months = [
-        'jan',
-        'feb',
-        'mar',
-        'apr',
-        'may',
-        'jun',
-        'jul',
-        'aug',
-        'sep',
-        'oct',
-        'nov',
-        'dec',
-      ];
+      
       const transformed = transactionData.map(transaction => {
         var amount = transaction.Amount;
         var quarter;
@@ -44,62 +48,24 @@ const tranformedData = dataType => {
           }
         }
 
-        var transactionDate = transaction.Date;
-        var transactionDate2 = moment(transaction.Date, 'DD.MM.YYYY').toDate();
-        var month = parseInt(moment(transactionDate2).format('MM'));
-        var dayf = parseInt(moment(transactionDate2).format('DD'));
-        var year = parseInt(moment(transactionDate2).format('YYY'));
+        var transactionDate = moment(transaction.Date, 'DD.MM.YYYY').toDate();
+        var month = parseInt(moment(transactionDate).format('MM'));
+        var dayf = parseInt(moment(transactionDate).format('DD'));
+        var year = parseInt(moment(transactionDate).format('YYY'));
+        var dayOfYear = moment(transaction.Date, 'DD.MM.YYYY').dayOfYear();
 
-        const date = moment({day, month, year});
-        transactionDate = transactionDate.replace(/./g, ':').split(':');
-        transactionDate = new Date(
-          transactionDate[2],
-          transactionDate[1],
-          transactionDate[0],
-        );
         balance += amount;
-        //Calculate day of year from 1-366
-        var now = transactionDate;
-        var start = new Date(transactionDate.getFullYear(), 0, 0);
-        var diff = now - start;
-        var oneDay = 1000 * 60 * 60 * 24;
-        var day = Math.floor(diff / oneDay);
-        if (month <= 3) {
-          quarter = 'Quarter One';
-        }else if (month > 3 && month <= 6) {
-          quarter = 'Quarter Twu';
-        }else if (month > 6 && month <= 9) {
-          quarter = 'Quarter Three';
-        }else if (month > 9){
-          quarter = 'Quarter Four';
-        }
         return {
-          DayOfYear: date.dayOfYear(),
+          DayOfYear: dayOfYear,
           BankBalance: balance,
-          Quarter: quarter,
           Month: months[month-1],
-          Day: dayf,
+          DayOfMonth: dayf,
         };
       });
       return {data: transformed};
     }
     case 'VIZ_02': {
       var groupedData = [[], [], [], [], [], [], [], [], []];
-
-      var months = [
-        'jan',
-        'feb',
-        'mar',
-        'apr',
-        'may',
-        'jun',
-        'jul',
-        'aug',
-        'sep',
-        'oct',
-        'nov',
-        'dec',
-      ];
       var totals = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
       let uniques = [...new Set(transactionData.map(item => item.Category))];
 
@@ -172,21 +138,6 @@ const tranformedData = dataType => {
             amount = 0;
           }
         }
-
-        var months = [
-          'jan',
-          'feb',
-          'mar',
-          'apr',
-          'may',
-          'jun',
-          'jul',
-          'aug',
-          'sep',
-          'oct',
-          'nov',
-          'dec',
-        ];
 
         return {
           x: Date2,

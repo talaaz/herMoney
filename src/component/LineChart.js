@@ -17,16 +17,40 @@ import {
 import transformedData from '../functions/transaction';
 import moment from 'moment';
 
+
+const currentDate = moment(new Date(), 'DD.MM.YYYY');
+var month = currentDate.format('DD');
+console.log(month);
+
+// Datastructure populated
+const pickerData = [
+  {
+    title: "Past 3 months",
+    interval: { start: 26, end: 117 }
+  },
+  {
+    title: "Past 6 months",
+    interval: { start: 1, end: 117 }
+  },  
+  {
+    title: "Past 9 months",
+    interval: { start: 1, end: 117 }
+  },  
+  {
+    title: "Past year",
+    interval: { start: 1, end: 117 }
+  },
+]
 export const LineChart = ({}) => {
   const data = transformedData('VIZ_01').data;
-  
   const VictoryZoomVoronoiContainer = createContainer('zoom', 'voronoi');
   const [selectedValueQuarter, setSelectedValueQuarter] = useState(
-    'Quarter one',
+    pickerData[0].interval,
   );
+  
 
   const filteredData = data.filter(element => {
-    return element.Quarter === selectedValueQuarter;
+    return element.DayOfYear >= selectedValueQuarter.start;
 
   })
 
@@ -35,10 +59,9 @@ export const LineChart = ({}) => {
       x: t.DayOfYear,
       y: t.BankBalance,
       month: t.Month,
-      day: t.Day,
+      day: t.DayOfMonth,
     }
   })
-
 
   return (
     <View>
@@ -46,10 +69,11 @@ export const LineChart = ({}) => {
       selectedValue={selectedValueQuarter}
       onValueChange={itemValue => setSelectedValueQuarter(itemValue)}
             style={{height: 50, width: 200}}>
-            <Picker.Item label='Quarter One' value='Quarter One' key={0} />
-            <Picker.Item label='Quarter Two' value='Quarter Two' key={1} />
-            <Picker.Item label='Quarter Three' value='Quarter Three' key={2} />
-            <Picker.Item label='Quarter Four' value='Quarter Four' key={3} />
+              {
+                pickerData.map((item, index) => {
+                  return <Picker.Item label={item.title} value={item.interval} key={index} />;
+                })
+              }
           </Picker>
           <View style={styles.lineChart}>
       

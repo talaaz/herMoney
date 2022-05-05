@@ -1,23 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
-  FlatList,
-  Text,
-  View,
-  StyleSheet,
-  ScrollView,
-  Image,
-  TouchableOpacity,
+  ScrollView, StyleSheet, Text,
+  View
 } from 'react-native';
-
+import { GoalProgress } from '../component/GoalProgress';
+import { LineChart } from '../component/LineChart';
+import { PercentageChart } from '../component/PercentageChart';
+import { ScrollChart } from '../component/ScrollChart';
 import transformedData from '../functions/transaction';
-import {Picker} from '@react-native-picker/picker';
-import {LineChart} from '../component/LineChart';
-import {CategoryChart} from '../component/CategoryChart';
-import {PercentageChart} from '../component/PercentageChart';
-import {TextInput, IconButton, Button} from 'react-native-paper';
-import {ScrollChart} from '../component/ScrollChart';
-import {GoalProgress} from '../component/GoalProgress';
-import {ProgressBar, Colors} from 'react-native-paper';
+
 
 const HomeScreen = ({navigation}) => {
   const total = transformedData('TotalAmount').data;
@@ -33,14 +24,14 @@ const HomeScreen = ({navigation}) => {
       <Text style={styles.text}>Current Balance</Text>
 
       <View style={styles.totalCard}>
-        <Text style={styles.text}>You have: {dagar.toFixed(2)} </Text>
+        <Text style={styles.text}>You have: {dagar.toFixed(2)}.- DKK</Text>
       </View>
       <Text style={styles.text}>Total Balance</Text>
       <LineChart />
 
       <Text style={styles.text}>Spending</Text>
       <PercentageChart />
-      <ScrollChart />
+      <ScrollChart key={1} />
       {/* 
       <Text style={styles.text}>Categories</Text> */}
       {/* <CategoryChart /> */}
