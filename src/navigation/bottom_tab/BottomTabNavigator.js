@@ -7,19 +7,41 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const BottomTabNavigator = () => {
   const Tab = createBottomTabNavigator();
+
+  const screenOptionStyle = {
+    headerStyle: {
+      backgroundColor: '#ad1638',
+    },
+    headerTintColor: '#e5e5e5',
+    headerBackTitle: '',
+    tabBarStyle: [{backgroundColor: '#ad1638'}],
+  };
   return (
-    <Tab.Navigator screenOptions={{headerShown: false}}>
+    <Tab.Navigator screenOptions={screenOptionStyle}>
       <Tab.Screen
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: 'Overview',
           tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <MaterialCommunityIcons
+              name="trending-up"
+              color="white"
+              size={size}
+            />
           ),
         }}
       />
-      <Tab.Screen name="Details" component={DetailsScreen} />
+      <Tab.Screen
+        name="Details"
+        component={DetailsScreen}
+        options={{
+          tabBarLabel: 'Details',
+          tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons name="cash" color="white" size={size} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };
